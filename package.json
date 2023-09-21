@@ -2,7 +2,9 @@
   "name": "@nx-app/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "blog:serve": "nx serve blog"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.2.0",
