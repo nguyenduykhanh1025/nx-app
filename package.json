@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "blog:serve": "nx serve blog"
+    "blog:serve": "nx serve blog",
+    "quiz:serve": "nx serve quiz",
+    "icon-sprite": "svg2sprite apps/quiz/src/assets/icons/ apps/quiz/src/assets/icons/icon-sprite.svg --stripStyles --stripExtraAttrs --stripEmptyTags --stripAttrs id --stripAttrs data-name"
   },
   "private": true,
   "dependencies": {
@@ -12,6 +14,7 @@
     "@angular/compiler": "~16.2.0",
     "@angular/core": "~16.2.0",
     "@angular/forms": "~16.2.0",
+    "@angular/material": "^16.2.12",
     "@angular/platform-browser": "~16.2.0",
     "@angular/platform-browser-dynamic": "~16.2.0",
     "@angular/router": "~16.2.0",
@@ -61,6 +64,7 @@
     "postcss-preset-env": "~7.5.0",
     "postcss-url": "~10.1.3",
     "prettier": "^2.6.2",
+    "svg2sprite-cli": "^2.0.1",
     "tailwindcss": "^3.0.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
