@@ -1,27 +1,12 @@
 import { CommonModule } from '@angular/common';
-import {
-  MatIconModule, MatIconRegistry,
-} from '@angular/material/icon';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { IconComponent } from '../../../../../../libs/web/ui/src/lib/icon/icon.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ButtonIconComponent, IconComponent } from '@nx-app/web/libs';
 
 @Component({
   selector: 'quiz-main-layout',
   standalone: true,
-  imports: [
-    CommonModule,
-    // MatIconModule,
-    IconComponent
-  ],
+  imports: [CommonModule, IconComponent, ButtonIconComponent],
   templateUrl: './main-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainLayoutComponent {
-  private iconRegistry = inject(MatIconRegistry);
-  private sanitizer = inject(DomSanitizer)
-
-  constructor() {
-    // this.iconRegistry.addSvgIconSet(this.sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-sprite.svg'))
-  }
-}
+export class MainLayoutComponent {}

@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-app/button": ["libs/web/ui/src/index.ts"],
-      "@nx-app/ui": ["libs/web/src/index.ts"]
+      "@nx-app/web/libs": ["libs/web/ui/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

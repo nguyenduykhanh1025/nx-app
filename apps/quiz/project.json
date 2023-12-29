@@ -23,7 +23,7 @@
             "ignore": ["icons/**/*"],
             "input": "./libs/web/ui/assets/",
             "output": "./assets"
-          },
+          }
         ],
         "styles": ["apps/quiz/src/styles.scss"],
         "scripts": []

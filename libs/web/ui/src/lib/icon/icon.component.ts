@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -9,7 +9,6 @@ const ICON_SPRITE_FILE_PATH = '/assets/sprite.svg';
 @Component({
   selector: 'ui-icon',
   standalone: true,
-  encapsulation: ViewEncapsulation.None,
   imports: [CommonModule, MatIconModule],
   templateUrl: './icon.component.html',
 })
