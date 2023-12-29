@@ -5,7 +5,7 @@
   "scripts": {
     "blog:serve": "nx serve blog",
     "quiz:serve": "nx serve quiz",
-    "icon-sprite": "svg2sprite apps/quiz/src/assets/icons/ apps/quiz/src/assets/icons/icon-sprite.svg --stripStyles --stripExtraAttrs --stripEmptyTags --stripAttrs id --stripAttrs data-name"
+    "icon-sprite": "svg2sprite libs/web/ui/assets/icons/ libs/web/ui/assets/icons/sprite.svg --stripStyles --stripExtraAttrs --stripEmptyTags --stripAttrs id --stripAttrs data-name"
   },
   "private": true,
   "dependencies": {

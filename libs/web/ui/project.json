@@ -2,7 +2,7 @@
   "name": "button",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/web/ui/src",
-  "prefix": "nx-app",
+  "prefix": "ui",
   "tags": [],
   "projectType": "library",
   "targets": {

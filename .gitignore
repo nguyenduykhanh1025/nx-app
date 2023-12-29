@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 .angular
+/libs/web/ui/assets/sprite.svg

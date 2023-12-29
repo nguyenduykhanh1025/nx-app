@@ -4,13 +4,15 @@ import {
 } from '@angular/material/icon';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { IconComponent } from '../../../../../../libs/web/ui/src/lib/icon/icon.component';
 
 @Component({
   selector: 'quiz-main-layout',
   standalone: true,
   imports: [
     CommonModule,
-    MatIconModule
+    // MatIconModule,
+    IconComponent
   ],
   templateUrl: './main-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,6 +22,6 @@ export class MainLayoutComponent {
   private sanitizer = inject(DomSanitizer)
 
   constructor() {
-    this.iconRegistry.addSvgIconSet(this.sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-sprite.svg'))
+    // this.iconRegistry.addSvgIconSet(this.sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icon-sprite.svg'))
   }
 }

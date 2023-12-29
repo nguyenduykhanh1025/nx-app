@@ -15,7 +15,16 @@
         "main": "apps/quiz/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/quiz/tsconfig.app.json",
-        "assets": ["apps/quiz/src/favicon.ico", "apps/quiz/src/assets"],
+        "assets": [
+          "apps/quiz/src/favicon.ico",
+          "apps/quiz/src/assets",
+          {
+            "glob": "**/*",
+            "ignore": ["icons/**/*"],
+            "input": "./libs/web/ui/assets/",
+            "output": "./assets"
+          },
+        ],
         "styles": ["apps/quiz/src/styles.scss"],
         "scripts": []
       },

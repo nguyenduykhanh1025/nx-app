@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'nx-app-button',
+  selector: 'ui-button',
   standalone: true,
+  encapsulation: ViewEncapsulation.None,
   imports: [CommonModule],
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {}
