@@ -1,7 +1,13 @@
-
-<ui-button>
-  <ui-icon svgIcon="block"></ui-icon>
-  <span>
-    <ng-content></ng-content>
-  </span>
-</ui-button>
+<span class="w-max block">
+  <ui-button>
+    <ui-icon
+      class="contents"
+      [svgIcon]="svgIcon"
+      [ariaLabel]="ariaLabel"
+      [dataRotate]="dataRotate"
+    ></ui-icon>
+    <span class="ml-2">
+      <ng-content></ng-content>
+    </span>
+  </ui-button>
+</span>
