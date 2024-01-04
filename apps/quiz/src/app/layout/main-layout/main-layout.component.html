@@ -1,4 +1,4 @@
-<div class="bg-primary min-h-screen">
+<div class="bg-primary min-h-screen my-custom-class">
   <nav class="border-b-2 border-gray-400">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
@@ -235,7 +235,8 @@
           </div>
         </div>
         <div class="flex w-1/4 justify-between">
-          <ui-button-icon svgIcon="rollback-o"> Thẻ ghi nhớ </ui-button-icon>
+          <ui-button svgIcon="rollback-o" [isDisabled]="true">Thẻ ghi nhớ</ui-button>
+          <!-- <ui-button-icon svgIcon="rollback-o"> Thẻ ghi nhớ </ui-button-icon> -->
           <ui-icon class="flex" svgIcon="rollback-o"> </ui-icon>
           <ui-icon class="flex" svgIcon="rollback-o"> </ui-icon>
         </div>
