@@ -1,11 +1,11 @@
+<!-- bg-button-primary -->
 <div
-  class="flex w-full justify-center rounded-md bg-primary px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 max-w-max"
+  class="flex items-center w-full bg-button-primary justify-center rounded-md px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 max-w-max"
   disabled
 >
   <ui-spinner *ngIf="isLoading" [size]="SnipperSize.MEDIUM"></ui-spinner>
   <ui-icon class="contents" *ngIf="isShowIcon" [svgIcon]="svgIcon"></ui-icon>
-  <span class="ml-1">
+  <span>
     <ng-content></ng-content>
   </span>
 </div>
-<!-- [class]="isDisabled ? 'cursor-not-allowed bg-indigo-400' : ''" -->

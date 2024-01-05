@@ -11,6 +11,7 @@
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
         "project": "libs/web/ui/ng-package.json",
+        "styles": ["libs/web/ui/src/styles.scss"],
         "tailwindConfig": "libs/web/ui/tailwind.config.js"
       },
       "configurations": {

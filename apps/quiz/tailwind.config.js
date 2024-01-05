@@ -1,24 +1,14 @@
-const { createGlobPatternsForDependencies } = require('@nx/angular/tailwind');
 const { join } = require('path');
-const { colors } = require('./src/tailwind-config/colors');
+const sharedTailwindConfig = require('../../libs/web/tailwind-preset/tailwind.config');
 
+console.log('__dirname', __dirname);
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
+  presets: [sharedTailwindConfig],
   content: [
     join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
-    ...createGlobPatternsForDependencies(__dirname),
+    join(__dirname, '../../libs/web/ui/src/**/!(*.stories|*.spec).{ts,html}'),
   ],
-  darkMode: 'class',
-  theme: {
-    extend: {
-      backgroundColor: {
-        primary: colors.primary
-      },
-      colors: {
-        primary: colors.primary,
-      },
-    }
-  },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
