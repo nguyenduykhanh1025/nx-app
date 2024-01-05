@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ButtonComponent, ButtonIconComponent, FlashCardComponent, IconComponent } from '@nx-app/web/libs';
+import { ButtonType } from 'libs/web/ui/src/lib/model/button-type';
 
 @Component({
   selector: 'quiz-main-layout',
@@ -10,4 +11,6 @@ import { ButtonComponent, ButtonIconComponent, FlashCardComponent, IconComponent
   styleUrls: ['./main-layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainLayoutComponent {}
+export class MainLayoutComponent {
+  ButtonType = ButtonType;
+}
