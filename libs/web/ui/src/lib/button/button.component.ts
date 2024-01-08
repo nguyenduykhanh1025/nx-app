@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  HostListener,
   Input,
   Output,
   ViewEncapsulation,
@@ -38,11 +39,11 @@ export class ButtonComponent {
   get typeClasses(): string {
     switch (this.type) {
       case ButtonType.PRIMARY:
-        return 'bg-button-primary';
+        return 'bg-button-primary-active hover:bg-button-primary-hover';
       case ButtonType.SECONDARY:
-        return 'bg-button-secondary';
+        return 'bg-button-secondary-active hover:bg-button-secondary-hover';
       case ButtonType.TRANSPARENT:
-        return 'bg-transparent border-2 border-secondary';
+        return 'bg-transparent border-2 border-secondary hover:bg-button-transparent-hover';
       default:
         return '';
     }
@@ -59,5 +60,19 @@ export class ButtonComponent {
       default:
         return '';
     }
+  }
+
+  get disabledClasses(): string {
+   if(!this.isDisabled) {
+    return '';
+   }
+   return 'text-disabled bg-transparent border-2 border-secondary cursor-not-allowed hover:bg-button-secondary-hover'
+  }
+
+  @HostListener('click', ['$event'])
+  onClick(event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+    this.uiClick.emit();
   }
 }
