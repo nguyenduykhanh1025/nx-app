@@ -5,6 +5,7 @@ module.exports = {
         primary: '#0a082d',
         secondary: '#2e3856',
         disabled: '#586380',
+        active: '#ffffff',
         button: {
           primary: {
             active: '#4255ff',

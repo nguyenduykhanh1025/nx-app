@@ -64,9 +64,9 @@ export class ButtonComponent {
 
   get disabledClasses(): string {
    if(!this.isDisabled) {
-    return '';
+    return 'cursor-pointer text-active';
    }
-   return 'text-disabled bg-transparent border-2 border-secondary cursor-not-allowed hover:bg-button-secondary-hover'
+   return 'cursor-not-allowed text-disabled bg-transparent border-2 border-disabled hover:bg-transparent'
   }
 
   @HostListener('click', ['$event'])
