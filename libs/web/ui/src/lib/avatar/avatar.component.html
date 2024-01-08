@@ -1,0 +1,21 @@
+<img
+  *ngIf="!!src; else noSrc"
+  [ngClass]="[sizeClasses, shapeClasses]"
+  [src]="src"
+  alt="Avatar"
+/>
+<ng-template #noSrc>
+  <svg
+    class=" text-gray-400 border-2 border-secondary px-1 py-1"
+    [ngClass]="[sizeClasses, shapeClasses]"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+      clip-rule="evenodd"
+    ></path>
+  </svg>
+</ng-template>

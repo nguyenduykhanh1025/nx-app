@@ -1,4 +1,4 @@
-export enum IconButtonSize {
+export enum AvatarSize {
   SMALL,
   MEDIUM,
   LARGE

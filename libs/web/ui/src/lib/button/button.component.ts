@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   HostListener,
@@ -17,7 +18,7 @@ import { ButtonType } from '../model/button-type';
 @Component({
   selector: 'ui-button',
   standalone: true,
-  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent, SpinnerComponent],
   templateUrl: './button.component.html',
 })

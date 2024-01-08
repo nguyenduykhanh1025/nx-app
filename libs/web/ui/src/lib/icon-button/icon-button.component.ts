@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
@@ -7,6 +7,7 @@ import { IconButtonShape } from '../model/icon-button-shape';
 @Component({
   selector: 'ui-icon-button',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent, ButtonComponent],
   templateUrl: './icon-button.component.html',
 })

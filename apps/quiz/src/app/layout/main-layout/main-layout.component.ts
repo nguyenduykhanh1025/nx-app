@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
+  AvatarComponent,
   ButtonComponent,
   FlashCardComponent,
+  IconButtonComponent,
   IconComponent,
 } from '@nx-app/web/libs';
 import { ButtonType } from 'libs/web/ui/src/lib/model/button-type';
-import { IconButtonComponent } from '../../../../../../libs/web/ui/src/lib/icon-button/icon-button.component';
 import { ButtonSize } from 'libs/web/ui/src/lib/model/button-size';
+import { AvatarShape } from 'libs/web/ui/src/lib/model/avatar-shape';
 
 @Component({
   selector: 'quiz-main-layout',
@@ -18,6 +20,7 @@ import { ButtonSize } from 'libs/web/ui/src/lib/model/button-size';
     FlashCardComponent,
     ButtonComponent,
     IconButtonComponent,
+    AvatarComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],
@@ -26,6 +29,7 @@ import { ButtonSize } from 'libs/web/ui/src/lib/model/button-size';
 export class MainLayoutComponent {
   ButtonType = ButtonType;
   ButtonSize = ButtonSize;
+  AvatarShape = AvatarShape;
 
   something() {
     console.log('sdasdad');
