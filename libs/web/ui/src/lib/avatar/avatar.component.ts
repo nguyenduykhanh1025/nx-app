@@ -9,8 +9,8 @@ import {
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { SpinnerComponent } from '../spinner/spinner.component';
-import { AvatarSize } from '../model/avatar-size';
-import { AvatarShape } from '../model/avatar-shape';
+import { AvatarSize } from '../models/avatar-size';
+import { AvatarShape } from '../models/avatar-shape';
 
 @Component({
   selector: 'ui-avatar',

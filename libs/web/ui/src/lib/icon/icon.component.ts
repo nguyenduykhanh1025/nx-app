@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core
 import { CommonModule } from '@angular/common';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { SvgIcon } from '../model/svg-icon';
+import { SvgIcon } from '../models/svg-icon';
 
 const ICON_SPRITE_FILE_PATH = '/assets/sprite.svg';
 

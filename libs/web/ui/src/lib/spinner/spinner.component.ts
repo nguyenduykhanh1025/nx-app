@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SnipperSize } from '../model/snipper-size';
+import { SnipperSize } from '../models/snipper-size';
 
 @Component({
   selector: 'ui-spinner',

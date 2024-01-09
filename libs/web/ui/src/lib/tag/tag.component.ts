@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { TagSize } from '../model/tag-size';
-import { TagColor } from '../model/tag-color';
+import { TagSize } from '../models/tag-size';
+import { TagColor } from '../models/tag-color';
 
 @Component({
   selector: 'ui-tag',
