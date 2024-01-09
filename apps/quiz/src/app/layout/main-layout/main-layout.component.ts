@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   AvatarComponent,
   ButtonComponent,
+  CardComponent,
   FlashCardComponent,
   IconButtonComponent,
   IconComponent,
@@ -22,7 +23,8 @@ import { AvatarShape } from 'libs/web/ui/src/lib/model/avatar-shape';
     ButtonComponent,
     IconButtonComponent,
     AvatarComponent,
-    TagComponent
+    TagComponent,
+    CardComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],

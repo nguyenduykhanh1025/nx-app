@@ -21,6 +21,12 @@ module.exports = {
             hover: '#282e3e'
           },
         },
+        card: {
+          primary: {
+            active: '#2e3856',
+            hover: '#2e3856'
+          }
+        }
       },
     },
   },
