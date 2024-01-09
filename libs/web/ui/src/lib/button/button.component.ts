@@ -5,7 +5,6 @@ import {
   HostListener,
   Input,
   Output,
-  ViewEncapsulation,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SvgIcon } from '../model/svg-icon';

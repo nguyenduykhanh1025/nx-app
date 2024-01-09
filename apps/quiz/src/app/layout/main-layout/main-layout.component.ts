@@ -6,6 +6,7 @@ import {
   FlashCardComponent,
   IconButtonComponent,
   IconComponent,
+  TagComponent,
 } from '@nx-app/web/libs';
 import { ButtonType } from 'libs/web/ui/src/lib/model/button-type';
 import { ButtonSize } from 'libs/web/ui/src/lib/model/button-size';
@@ -20,7 +21,8 @@ import { AvatarShape } from 'libs/web/ui/src/lib/model/avatar-shape';
     FlashCardComponent,
     ButtonComponent,
     IconButtonComponent,
-    AvatarComponent
+    AvatarComponent,
+    TagComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],

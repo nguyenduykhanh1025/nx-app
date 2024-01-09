@@ -6,6 +6,8 @@ module.exports = {
         secondary: '#2e3856',
         disabled: '#586380',
         active: '#ffffff',
+        success: '#18AE79',
+        error: '#D05700',
         button: {
           primary: {
             active: '#4255ff',
