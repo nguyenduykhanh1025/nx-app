@@ -1,6 +1,6 @@
 <div
   class="flex items-center w-full justify-center rounded-md text-sm font-semibold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 max-w-ma "
-  [ngClass]="[typeClasses, sizeClasses, disabledClasses]"
+  [ngClass]="[typeClasses, sizeClasses, disabledClasses, borderedClasses]"
   [attr.aria-disabled]="isDisabled"
 >
   <ui-spinner *ngIf="isLoading" [size]="SnipperSize.MEDIUM"></ui-spinner>

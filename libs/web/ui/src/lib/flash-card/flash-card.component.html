@@ -1,11 +1,14 @@
-<div class="flashcard-container text-white">
-  <div class="flashcard">
-    <div class="question">
+<div
+  class="flashcard-container text-white cursor-pointer rounded-xl"
+  (click)="handleClick()"
+>
+  <div class="flashcard" [ngClass]="isRotated ? 'rotate-y-180' : ''">
+    <div class="question bg-flash-card-primary-active">
       <div class="content">
         <ng-content select="[slot=front]"></ng-content>
       </div>
     </div>
-    <div class="answer">
+    <div class="answer bg-flash-card-primary-active">
       <div class="content">
         <ng-content select="[slot=back]"></ng-content>
       </div>

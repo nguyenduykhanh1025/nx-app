@@ -10,4 +10,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './flash-card.component.html',
 })
 export class FlashCardComponent {
+  isRotated = false;
+
+  handleClick(): void {
+    this.isRotated = !this.isRotated;
+  }
 }

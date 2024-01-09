@@ -1,8 +1,3 @@
-// TODO: move to tailwind
-.flashcard-container:hover .flashcard {
-  transform: rotateY(180deg);
-}
-
 .flashcard-container,
 .question,
 .answer {
@@ -28,7 +23,6 @@
 .question,
 .answer {
   backface-visibility: hidden;
-  border: 1px solid #aaa;
   border-radius: 10px 10px;
   margin: auto;
   text-align: center;

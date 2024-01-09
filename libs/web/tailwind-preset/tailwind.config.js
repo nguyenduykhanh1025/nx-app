@@ -1,3 +1,5 @@
+const { rotate } = require("./utilities");
+
 module.exports = {
   theme: {
     extend: {
@@ -26,8 +28,15 @@ module.exports = {
             active: '#2e3856',
             hover: '#2e3856'
           }
+        },
+        'flash-card': {
+          primary: {
+            active: '#2e3856',
+            hover: '#2e3856'
+          }
         }
       },
     },
   },
+  plugins: [rotate]
 };

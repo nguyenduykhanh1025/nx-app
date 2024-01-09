@@ -9,9 +9,9 @@ import {
   IconComponent,
   TagComponent,
 } from '@nx-app/web/libs';
-import { ButtonType } from 'libs/web/ui/src/lib/model/button-type';
-import { ButtonSize } from 'libs/web/ui/src/lib/model/button-size';
-import { AvatarShape } from 'libs/web/ui/src/lib/model/avatar-shape';
+import { AvatarShape } from 'libs/web/ui/src/lib/models/avatar-shape';
+import { ButtonSize } from 'libs/web/ui/src/lib/models/button-size';
+import { ButtonType } from 'libs/web/ui/src/lib/models/button-type';
 
 @Component({
   selector: 'quiz-main-layout',

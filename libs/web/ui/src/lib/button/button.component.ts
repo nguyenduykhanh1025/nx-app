@@ -27,6 +27,7 @@ export class ButtonComponent {
   @Input() isDisabled = false;
   @Input() size = ButtonSize.MEDIUM;
   @Input() type = ButtonType.PRIMARY;
+  @Input() bordered = true;
 
   @Output() uiClick = new EventEmitter<void>();
 
@@ -43,7 +44,7 @@ export class ButtonComponent {
       case ButtonType.SECONDARY:
         return 'bg-button-secondary-active hover:bg-button-secondary-hover';
       case ButtonType.TRANSPARENT:
-        return 'bg-transparent border-2 border-secondary hover:bg-button-transparent-hover';
+        return 'bg-transparent border-secondary hover:bg-button-transparent-hover';
       default:
         return '';
     }
@@ -66,7 +67,14 @@ export class ButtonComponent {
    if(!this.isDisabled) {
     return 'cursor-pointer text-active';
    }
-   return 'cursor-not-allowed text-disabled bg-transparent border-2 border-disabled hover:bg-transparent'
+   return 'cursor-not-allowed text-disabled bg-transparent border-disabled hover:bg-transparent'
+  }
+
+  get borderedClasses(): string {
+    if(this.bordered && (this.type == ButtonType.TRANSPARENT || this.isDisabled)) {
+      return 'border-2'
+    }
+    return 'border-0'
   }
 
   @HostListener('click', ['$event'])
