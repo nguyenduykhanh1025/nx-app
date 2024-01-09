@@ -1,4 +1,4 @@
-const { rotate } = require("./utilities");
+const { rotate } = require('./utilities');
 
 module.exports = {
   theme: {
@@ -13,30 +13,30 @@ module.exports = {
         button: {
           primary: {
             active: '#4255ff',
-            hover: '#423ed8'
+            hover: '#423ed8',
           },
           secondary: {
             active: '#2e3856',
-            hover: '#1a1d28'
+            hover: '#1a1d28',
           },
           transparent: {
-            hover: '#282e3e'
+            hover: '#282e3e',
           },
         },
         card: {
           primary: {
             active: '#2e3856',
-            hover: '#2e3856'
-          }
+            hover: '#2e3856',
+          },
         },
         'flash-card': {
           primary: {
             active: '#2e3856',
-            hover: '#2e3856'
-          }
-        }
+            hover: '#2e3856',
+          },
+        },
       },
     },
   },
-  plugins: [rotate]
+  plugins: [rotate],
 };

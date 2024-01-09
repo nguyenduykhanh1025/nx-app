@@ -7,3 +7,4 @@ export * from './lib/flash-card/flash-card.component'
 export * from './lib/icon-button/icon-button.component'
 export * from './lib/icon/icon.component';
 export * from './lib/tag/tag.component';
+export * from './lib/progress/progress.component';
