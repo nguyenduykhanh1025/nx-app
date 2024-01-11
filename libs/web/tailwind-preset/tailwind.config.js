@@ -35,6 +35,12 @@ module.exports = {
             hover: '#2e3856',
           },
         },
+        'text-input': {
+          primary: {
+            active: '#4255ff',
+            hover: '#423ed8',
+          },
+        },
       },
     },
   },

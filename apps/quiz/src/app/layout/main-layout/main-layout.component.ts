@@ -8,7 +8,9 @@ import {
   IconButtonComponent,
   IconComponent,
   TagComponent,
-  ProgressComponent
+  ProgressComponent,
+  TextFieldComponent,
+  TextAreaComponent
 } from '@nx-app/web/libs';
 import { AvatarShape } from 'libs/web/ui/src/lib/models/avatar-shape';
 import { ButtonSize } from 'libs/web/ui/src/lib/models/button-size';
@@ -26,7 +28,9 @@ import { ButtonType } from 'libs/web/ui/src/lib/models/button-type';
     AvatarComponent,
     TagComponent,
     CardComponent,
-    ProgressComponent
+    ProgressComponent,
+    TextFieldComponent,
+    TextAreaComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],
