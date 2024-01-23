@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentFactoryResolver, ComponentRef, OnDestroy, Type, ViewChild, ViewContainerRef, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ComponentRef, OnDestroy, Type, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { AnimationState } from './constants';
 import { CommonModule } from '@angular/common';
 import { DialogRef } from './dialog-ref';
@@ -29,8 +29,8 @@ export class DialogPortalComponent<TContentComponent = any> implements AfterView
     this.#contentComponentRef.destroy();
   }
 
-  alo() {
-    this.#dialogRef.close()
+  onCloseClick() {
+    this.#closeDialog();
   }
 
   #loadContentIntoDialog() {
@@ -39,5 +39,9 @@ export class DialogPortalComponent<TContentComponent = any> implements AfterView
     }
 
     this.#contentComponentRef = this.contentDialogDirective.viewContainerRef.createComponent(this.contentComponentType)
+  }
+
+  #closeDialog() {
+    this.#dialogRef.close()
   }
 }

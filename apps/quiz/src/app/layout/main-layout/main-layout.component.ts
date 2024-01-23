@@ -47,15 +47,14 @@ export class MainLayoutComponent {
 
   dialogService = inject(DialogService);
 
-  ref: DialogRef | undefined;
+  ref: DialogRef;
 
   something() {
     this.ref = this.dialogService.open(TestComponent);
-    // console.log(ref);
   }
 
   something2() {
-    this.dialogService.open(Test2Component);
+    // this.dialogService.open(Test2Component);
     // if(!this.ref) return;
     // this.ref.close();
     // throw new Error('Method not implemented.');

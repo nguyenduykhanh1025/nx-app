@@ -15,6 +15,7 @@ export class DialogService {
   readonly #injector = inject(Injector);
 
   // TODO: try to remove 'any' type
+  // reference: https://johnbwoodruff.com/posts/angular-cdk-dialog/
   open<TReturnType = any, TContentComponent = any>(
     component: Type<TContentComponent>,
     config?: Partial<DialogConfig>
@@ -60,5 +61,3 @@ export class DialogService {
     };
   }
 }
-
-// reference: https://johnbwoodruff.com/posts/angular-cdk-dialog/
