@@ -208,11 +208,10 @@
           svgIcon="rollback-o"
           [type]="ButtonType.SECONDARY"
           (uiClick)="something()"
-          [isDisabled]="true"
         >
-          Thẻ ghi nhớ
+          Thẻ ghi nhớ something
         </ui-button>
-        <ui-button svgIcon="block" [type]="ButtonType.TRANSPARENT">
+        <ui-button svgIcon="block" [type]="ButtonType.TRANSPARENT" (uiClick)="something2()">
           Học
         </ui-button>
         <ui-button svgIcon="block" [isDisabled]="true"> Kiểm tra </ui-button>

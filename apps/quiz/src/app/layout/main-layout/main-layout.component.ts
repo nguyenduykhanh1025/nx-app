@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   AvatarComponent,
   ButtonComponent,
@@ -15,6 +15,10 @@ import {
 import { AvatarShape } from 'libs/web/ui/src/lib/models/avatar-shape';
 import { ButtonSize } from 'libs/web/ui/src/lib/models/button-size';
 import { ButtonType } from 'libs/web/ui/src/lib/models/button-type';
+import { DialogService } from '../../../../../../libs/web/ui/src/lib/dialog/dialog.service';
+import { DialogRef } from 'libs/web/ui/src/lib/dialog/dialog-ref';
+import { TestComponent } from './test/test.component';
+import { Test2Component } from './test2/test.component';
 
 @Component({
   selector: 'quiz-main-layout',
@@ -41,7 +45,19 @@ export class MainLayoutComponent {
   ButtonSize = ButtonSize;
   AvatarShape = AvatarShape;
 
+  dialogService = inject(DialogService);
+
+  ref: DialogRef | undefined;
+
   something() {
-    console.log('sdasdad');
+    this.ref = this.dialogService.open(TestComponent);
+    // console.log(ref);
+  }
+
+  something2() {
+    this.dialogService.open(Test2Component);
+    // if(!this.ref) return;
+    // this.ref.close();
+    // throw new Error('Method not implemented.');
   }
 }

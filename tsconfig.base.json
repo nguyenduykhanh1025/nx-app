@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@nx-app/web/libs": ["libs/web/ui/src/index.ts"],
-    }
+    },
+    "strictPropertyInitialization": false,
   },
   "exclude": ["node_modules", "tmp"]
 }
