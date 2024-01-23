@@ -1,0 +1,6 @@
+// instead, you can custom your own dialog background inside your app
+@layer components {
+  .dialog-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
