@@ -1,4 +1,5 @@
 import { OverlayConfig } from '@angular/cdk/overlay';
+import { of } from 'rxjs';
 
 export class DialogConfig<TData = any> {
   header = '';
@@ -8,4 +9,5 @@ export class DialogConfig<TData = any> {
   animationChildDelay = 0;
   data?: TData;
   overlayConfig?: OverlayConfig;
+  disableClose$ = of(false)
 }

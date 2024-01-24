@@ -1,7 +1,8 @@
 import { OverlayRef } from '@angular/cdk/overlay';
 import { DialogPortalComponent } from './dialog-portal.component';
-import { Observable, Subject, filter, map, race, take } from 'rxjs';
+import { Observable, Subject, filter, map, race, switchMap, take } from 'rxjs';
 import { ESCAPE } from '@angular/cdk/keycodes';
+import { DialogConfig } from './dialog.config';
 
 export class DialogRef<TReturnType = any, TContentComponent = any> {
   componentInstance: DialogPortalComponent<TContentComponent> | undefined;
@@ -10,22 +11,12 @@ export class DialogRef<TReturnType = any, TContentComponent = any> {
   readonly #beforeClosed$ = new Subject<TReturnType | undefined>();
   readonly #afterClosed$ = new Subject<TReturnType | undefined>();
 
-  constructor(private readonly overlayRef: OverlayRef) {
-    race(
-      overlayRef.backdropClick().pipe(map(() => undefined)),
-      overlayRef.keydownEvents().pipe(
-        filter((event) => event.keyCode === ESCAPE),
-        map(() => undefined)
-      )
-    )
-      .pipe(take(1))
-      .subscribe(() => {
-        this.close();
-      });
-
-    overlayRef.detachments().subscribe(() => {
-      this.#afterClosed$.next(this.result);
-    });
+  constructor(
+    private readonly overlayRef: OverlayRef,
+    private readonly config: DialogConfig
+  ) {
+    this.#handleCloseEvent();
+    this.#handleDetachmentsEvent();
   }
 
   get beforeClosed(): Observable<TReturnType | undefined> {
@@ -40,5 +31,30 @@ export class DialogRef<TReturnType = any, TContentComponent = any> {
     this.result = data;
     this.#beforeClosed$.next(data);
     this.overlayRef.dispose();
+  }
+
+  #handleCloseEvent() {
+    this.config.disableClose$
+      .pipe(
+        filter((isDisabledClose) => !isDisabledClose),
+        switchMap(() =>
+          race(
+            this.overlayRef.backdropClick().pipe(map(() => undefined)),
+            this.overlayRef.keydownEvents().pipe(
+              filter((event) => event.keyCode === ESCAPE),
+              map(() => undefined)
+            )
+          ).pipe(take(1))
+        )
+      )
+      .subscribe(() => {
+        this.close();
+      });
+  }
+
+  #handleDetachmentsEvent() {
+    this.overlayRef.detachments().subscribe(() => {
+      this.#afterClosed$.next(this.result);
+    });
   }
 }

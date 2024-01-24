@@ -24,7 +24,7 @@ export class DialogService {
 
     // attach DialogPortalComponent to Portal
     const overlayRef = this.#overlay.create(mergedConfig.overlayConfig);
-    const dialogRef = new DialogRef<TReturnType, TContentComponent>(overlayRef);
+    const dialogRef = new DialogRef<TReturnType, TContentComponent>(overlayRef, mergedConfig);
     const portal = new ComponentPortal(
       DialogPortalComponent,
       null,

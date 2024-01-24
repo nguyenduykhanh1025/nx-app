@@ -19,6 +19,7 @@ import { DialogService } from '../../../../../../libs/web/ui/src/lib/dialog/dial
 import { DialogRef } from 'libs/web/ui/src/lib/dialog/dialog-ref';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test.component';
+import { BehaviorSubject, ReplaySubject, interval } from 'rxjs';
 
 @Component({
   selector: 'quiz-main-layout',
@@ -47,10 +48,23 @@ export class MainLayoutComponent {
 
   dialogService = inject(DialogService);
 
+  test$$ = new BehaviorSubject(true)
+
   ref: DialogRef;
 
   something() {
-    this.ref = this.dialogService.open(TestComponent);
+    this.ref = this.dialogService.open(TestComponent, {
+      header: 'header of something',
+      disableClose$: this.test$$.asObservable()
+    });
+
+    interval(5000).subscribe(
+      () => {
+        console.log('asdsadasd');
+
+        this.test$$.next(false)
+      }
+    )
   }
 
   something2() {
