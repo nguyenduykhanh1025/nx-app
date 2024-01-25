@@ -4,8 +4,8 @@ import {
   Input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputFieldSize } from '../models/input-field-size';
-import { InputFieldType } from '../models/input-field-type';
+import { InputFieldSize } from './models/input-field-size';
+import { InputFieldType } from './models/input-field-type';
 
 @Component({
   selector: 'ui-textfield',

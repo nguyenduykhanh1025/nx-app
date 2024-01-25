@@ -10,16 +10,15 @@ import {
   TagComponent,
   ProgressComponent,
   TextFieldComponent,
-  TextAreaComponent
+  TextAreaComponent,
+  DialogService,
+  DialogType,
+  ButtonType,
+  ButtonSize,
+  AvatarShape,
 } from '@nx-app/web/libs';
-import { AvatarShape } from 'libs/web/ui/src/lib/models/avatar-shape';
-import { ButtonSize } from 'libs/web/ui/src/lib/models/button-size';
-import { ButtonType } from 'libs/web/ui/src/lib/models/button-type';
-import { DialogService } from '../../../../../../libs/web/ui/src/lib/dialog/dialog.service';
-import { DialogRef } from 'libs/web/ui/src/lib/dialog/dialog-ref';
 import { TestComponent } from './test/test.component';
-import { Test2Component } from './test2/test.component';
-import { BehaviorSubject, ReplaySubject, interval } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 
 @Component({
   selector: 'quiz-main-layout',
@@ -35,7 +34,7 @@ import { BehaviorSubject, ReplaySubject, interval } from 'rxjs';
     CardComponent,
     ProgressComponent,
     TextFieldComponent,
-    TextAreaComponent
+    TextAreaComponent,
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],
@@ -48,23 +47,28 @@ export class MainLayoutComponent {
 
   dialogService = inject(DialogService);
 
-  test$$ = new BehaviorSubject(true)
+  test$$ = new BehaviorSubject(true);
+  idx = 0;
 
-  ref: DialogRef;
+  // ref: DialogRef;
 
   something() {
-    this.ref = this.dialogService.open(TestComponent, {
+    // if(this.idx % 2 === 0) {
+    //   this.test$$.next(false);
+    // } else {
+    //   this.test$$.next(true);
+    // }
+    // this.idx += 1;
+
+    this.dialogService.open(TestComponent, {
       header: 'header of something',
-      disableClose$: this.test$$.asObservable()
+      // disableClose$: this.test$$.asObservable(),
+      type$: of(DialogType.NO),
+      isShownCloseButton$: of(false)
     });
-
-    interval(5000).subscribe(
-      () => {
-        console.log('asdsadasd');
-
-        this.test$$.next(false)
-      }
-    )
+    // setTimeout(() => {
+    //   this.test$$.next(false);
+    // }, 5000)
   }
 
   something2() {

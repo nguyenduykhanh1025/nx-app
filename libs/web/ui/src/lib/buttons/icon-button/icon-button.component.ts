@@ -2,13 +2,12 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
 import { IconButtonShape } from '../models/icon-button-shape';
 import { ButtonType } from '../models/button-type';
+import { IconComponent } from '../../icon/icon.component';
 
 @Component({
   selector: 'ui-icon-button',

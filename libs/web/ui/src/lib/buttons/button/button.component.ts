@@ -7,12 +7,12 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SvgIcon } from '../models/svg-icon';
+import { IconComponent } from '../../icon/icon.component';
+import { SpinnerComponent } from '../../spinner/spinner.component';
 import { ButtonSize } from '../models/button-size';
-import { IconComponent } from '../icon/icon.component';
-import { SpinnerComponent } from '../spinner/spinner.component';
-import { SnipperSize } from '../models/snipper-size';
 import { ButtonType } from '../models/button-type';
+import { SvgIcon } from '../../icon';
+import { SnipperSize } from '../../spinner';
 
 @Component({
   selector: 'ui-button',

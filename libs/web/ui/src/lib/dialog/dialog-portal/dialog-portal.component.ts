@@ -9,16 +9,14 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import { AnimationState } from './constants';
 import { CommonModule } from '@angular/common';
-import { DialogRef } from './dialog-ref';
 import { ContentDialogDirective } from './dialog-content.directive';
-import { ButtonComponent } from '../button/button.component';
-import { ButtonType } from '../models/button-type';
-import { IconButtonComponent } from '../icon-button/icon-button.component';
-import { ButtonSize } from '../models/button-size';
-import { DialogConfig } from './dialog.config';
-import { Subject, Subscription, filter, withLatestFrom } from 'rxjs';
+import { Observable, Subject, Subscription, filter, map, withLatestFrom } from 'rxjs';
+import { DialogRef } from '../utils/dialog-ref';
+import { DialogConfig } from '../models/dialog.config';
+import { AnimationState } from '../utils/constants';
+import { DialogType } from '../models/dialog-type';
+import { ButtonComponent, ButtonSize, ButtonType, IconButtonComponent } from '../../buttons';
 
 @Component({
   selector: 'ui-dialog-container',
@@ -50,6 +48,20 @@ export class DialogPortalComponent<TContentComponent = any>
   #contentComponentRef: ComponentRef<TContentComponent>;
   #closeDialog$$ = new Subject();
   #subscription = new Subscription();
+
+  get isEnableYesButton$(): Observable<boolean> {
+    return this.dialogConfig.type$.pipe(
+      filter(type => type === DialogType.YES_NO || type === DialogType.YES),
+      map(() => true)
+    )
+  }
+
+  get isEnableNoButton$(): Observable<boolean> {
+    return this.dialogConfig.type$.pipe(
+      filter(type => type === DialogType.YES_NO || type === DialogType.NO),
+      map(() => true)
+    )
+  }
 
   ngOnInit(): void {
     this.#handleCloseEvent();

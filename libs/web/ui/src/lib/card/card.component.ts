@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { CardType } from '../models/card-type';
+import { CardType } from './models/card-type';
 
 @Component({
   selector: 'ui-card',

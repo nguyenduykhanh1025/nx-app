@@ -8,25 +8,34 @@
       <h3 class="text-xl font-semibold">
         {{ dialogConfig.header }}
       </h3>
-      <ui-icon-button svgIcon="close-o" [type]="ButtonType.TRANSPARENT" (uiClick)="onCloseClick()"></ui-icon-button>
+      <ui-icon-button
+        svgIcon="close-o"
+        [type]="ButtonType.TRANSPARENT"
+        (uiClick)="onCloseClick()"
+        *ngIf="dialogConfig.isShownCloseButton$ | async"
+      ></ui-icon-button>
     </div>
     <!-- Modal body -->
     <div class="p-4 md:p-5 space-y-4">
       <ng-container uiContentDialog></ng-container>
     </div>
     <!-- Modal footer -->
-    <div
-      class="p-4 md:p-5 border-t rounded-b border-none"
-    >
-      <ui-button [type]="ButtonType.TRANSPARENT">
+    <div class="p-4 md:p-5 border-t rounded-b border-none">
+      <ui-button
+        [type]="ButtonType.TRANSPARENT"
+        *ngIf="isEnableNoButton$ | async"
+        (uiClick)="onCloseClick()"
+      >
         Cancel
       </ui-button>
       <div class="mt-2">
-        <ui-button [type]="ButtonType.PRIMARY">
+        <ui-button
+          [type]="ButtonType.PRIMARY"
+          *ngIf="isEnableYesButton$ | async"
+        >
           OK
         </ui-button>
       </div>
-
     </div>
   </div>
 </div>

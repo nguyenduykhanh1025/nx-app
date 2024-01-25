@@ -5,8 +5,8 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
-import { ProgressSize } from '../models/progress-size';
-import { ProgressColor } from '../models/progress-color';
+import { ProgressSize } from './models/progress-size';
+import { ProgressColor } from './models/progress-color';
 
 @Component({
   selector: 'ui-progress',
