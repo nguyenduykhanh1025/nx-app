@@ -41,6 +41,9 @@ module.exports = {
             hover: '#423ed8',
           },
         },
+        tooltip: {
+          primary: '#58637f',
+        },
       },
     },
   },

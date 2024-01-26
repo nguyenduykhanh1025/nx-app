@@ -16,9 +16,11 @@ import {
   ButtonType,
   ButtonSize,
   AvatarShape,
+  TooltipDirective,
 } from '@nx-app/web/libs';
 import { TestComponent } from './test/test.component';
 import { BehaviorSubject, of } from 'rxjs';
+import { TooltipPortalComponent } from '../../../../../../libs/web/ui/src/lib/tooltip/tooltip-portal/tooltip-portal.component';
 
 @Component({
   selector: 'quiz-main-layout',
@@ -35,6 +37,8 @@ import { BehaviorSubject, of } from 'rxjs';
     ProgressComponent,
     TextFieldComponent,
     TextAreaComponent,
+    TooltipDirective,
+    TooltipPortalComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],
@@ -52,7 +56,7 @@ export class MainLayoutComponent {
 
   // ref: DialogRef;
 
-  something() {
+  something(): void {
     // if(this.idx % 2 === 0) {
     //   this.test$$.next(false);
     // } else {
@@ -71,7 +75,7 @@ export class MainLayoutComponent {
     // }, 5000)
   }
 
-  something2() {
+  something2(): void {
     // this.dialogService.open(Test2Component);
     // if(!this.ref) return;
     // this.ref.close();

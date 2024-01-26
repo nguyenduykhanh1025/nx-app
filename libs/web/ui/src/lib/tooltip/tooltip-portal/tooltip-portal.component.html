@@ -1,0 +1,12 @@
+<div class="flex items-center" [class]="containerFlexClasses">
+  <div
+    class="px-2 py-2 text-sm font-medium text-white bg-tooltip-primary rounded-md shadow-sm tooltip"
+    [class]="contentClasses"
+  >
+    {{ text }}
+  </div>
+  <ui-icon
+    [svgIcon]="svgIcon"
+    class="text-tooltip-primary contents"
+  ></ui-icon>
+</div>
