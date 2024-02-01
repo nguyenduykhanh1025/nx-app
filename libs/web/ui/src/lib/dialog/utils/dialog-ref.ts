@@ -33,7 +33,7 @@ export class DialogRef<TReturnType = any, TContentComponent = any> {
     this.overlayRef.dispose();
   }
 
-  #handleCloseEvent() {
+  #handleCloseEvent(): void {
     this.config.disableClose$
       .pipe(
         filter((isDisabledClose) => !isDisabledClose),
@@ -52,7 +52,7 @@ export class DialogRef<TReturnType = any, TContentComponent = any> {
       });
   }
 
-  #handleDetachmentsEvent() {
+  #handleDetachmentsEvent(): void {
     this.overlayRef.detachments().subscribe(() => {
       this.#afterClosed$.next(this.result);
     });

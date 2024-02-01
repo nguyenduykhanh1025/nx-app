@@ -1,9 +1,17 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FlexibleConnectedPositionStrategy } from '@angular/cdk/overlay';
+import { CommonModule } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+  Input,
+} from '@angular/core';
+
 import { IconComponent } from '../../icon';
 import { TooltipIconDirection } from '../models/tooltip-icon-direction';
-import { CommonModule } from '@angular/common';
-
-const CONTENT_DISTANCE = 2;
+import TooltipService from '../services/tooltip.service';
 
 @Component({
   selector: 'ui-tooltip-portal',
@@ -12,9 +20,14 @@ const CONTENT_DISTANCE = 2;
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent],
 })
-export class TooltipPortalComponent {
+export class TooltipPortalComponent implements AfterViewInit {
   @Input() text = '';
   @Input() direction = TooltipIconDirection.BOTTOM;
+
+  readonly #cdr = inject(ChangeDetectorRef);
+  readonly #flexibleConnectedPositionStrategy = inject(
+    FlexibleConnectedPositionStrategy
+  );
 
   get svgIcon(): string {
     if (this.direction === TooltipIconDirection.BOTTOM) {
@@ -42,13 +55,22 @@ export class TooltipPortalComponent {
 
   get contentClasses(): string {
     if (this.direction === TooltipIconDirection.BOTTOM) {
-      return `-mb-${CONTENT_DISTANCE}`;
+      return `-mb-2`;
     } else if (this.direction === TooltipIconDirection.TOP) {
-      return `-mt-${CONTENT_DISTANCE}`;
+      return `-mt-2`;
     } else if (this.direction === TooltipIconDirection.LEFT) {
-      return `-ml-${CONTENT_DISTANCE}`;
+      return `-ml-2`;
     } else {
-      return `-mr-${CONTENT_DISTANCE}`;
+      return `-mr-2`;
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.#flexibleConnectedPositionStrategy.positionChanges.subscribe((res) => {
+      this.direction = TooltipService.getTooltipIconDirection(
+        res.connectionPair
+      );
+      this.#cdr.detectChanges();
+    });
   }
 }

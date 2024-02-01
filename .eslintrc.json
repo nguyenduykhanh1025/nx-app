@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "eslint-plugin-simple-import-sort"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -25,7 +25,9 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
       "rules": {
-        "@typescript-eslint/explicit-function-return-type": ["error"]
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
       }
     },
     {
