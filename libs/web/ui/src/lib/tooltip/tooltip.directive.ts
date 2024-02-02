@@ -10,13 +10,14 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  inject,
   Injector,
   Input,
   OnInit,
-  inject,
 } from '@angular/core';
-import { TooltipPortalComponent } from './tooltip-portal/tooltip-portal.component';
+
 import { TooltipConfig } from './models/tooltip.config';
+import { TooltipPortalComponent } from './tooltip-portal/tooltip-portal.component';
 
 @Directive({
   selector: '[uiTooltip]',

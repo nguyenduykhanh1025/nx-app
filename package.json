@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "blog:serve": "nx serve blog",
     "quiz:serve": "nx serve quiz",
     "icon-sprite": "svg2sprite libs/web/ui/assets/icons/ libs/web/ui/assets/sprite.svg --stripStyles --stripExtraAttrs --stripEmptyTags --stripAttrs id --stripAttrs data-name"
   },
