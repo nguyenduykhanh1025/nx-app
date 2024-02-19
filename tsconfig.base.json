@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-app/web/libs": ["libs/web/ui/src/index.ts"],
+      "@nx-app/web/libs": ["libs/web/ui/src/index.ts"]
     },
-    "strictPropertyInitialization": false,
+    "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "tmp"]
 }

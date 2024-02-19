@@ -1,0 +1,151 @@
+<section>
+  <div class="px-80 py-5">
+    <ui-textfield></ui-textfield>
+  </div>
+  <div class="px-80 py-5">
+    <ui-textarea></ui-textarea>
+  </div>
+
+  <div class="px-80 py-5">
+    <p class="text-2xl font-bold text-white">Prefixes: changing meaning</p>
+    <div class="flex justify-between max-w-lg mt-5">
+      <!-- <IconComponent></IconComponent> -->
+      <!-- <ui-tooltip-portal text="asdasdasd"></ui-tooltip-portal> -->
+      <ui-button
+        svgIcon="rollback-o"
+        [type]="ButtonType.SECONDARY"
+        (uiClick)="something()"
+        uiTooltip
+        tooltipText="something like that"
+      >
+        Thẻ ghi nhớ something
+      </ui-button>
+      <ui-button
+        svgIcon="block"
+        [type]="ButtonType.TRANSPARENT"
+        (uiClick)="something2()"
+      >
+        Học
+      </ui-button>
+      <ui-button svgIcon="block" [isDisabled]="true"> Kiểm tra </ui-button>
+      <ui-button svgIcon="block"> Ghép thẻ </ui-button>
+    </div>
+    <div class="mt-5 h-[428px] w-[814px]">
+      <ui-flash-card>
+        <ng-container slot="front"> Question 1 </ng-container>
+        <ng-container slot="back"> Question 2 </ng-container>
+      </ui-flash-card>
+    </div>
+    <div class="mt-5 icons w-[814px]">
+      <div class="flex items-center justify-between">
+        <ui-icon-button
+          svgIcon="rollback-o"
+          [type]="ButtonType.TRANSPARENT"
+          [bordered]="false"
+        ></ui-icon-button>
+        <ui-icon-button
+          svgIcon="swap-o"
+          [type]="ButtonType.TRANSPARENT"
+          [bordered]="false"
+        ></ui-icon-button>
+      </div>
+      <div class="flex items-center justify-between">
+        <ui-icon-button
+          svgIcon="close-o"
+          [type]="ButtonType.TRANSPARENT"
+          [isDisabled]="true"
+          [bordered]="false"
+        ></ui-icon-button>
+        <b>1/48</b>
+        <ui-icon-button
+          svgIcon="check-o"
+          [type]="ButtonType.TRANSPARENT"
+          [bordered]="false"
+        ></ui-icon-button>
+      </div>
+      <div class="flex items-center justify-between">
+        <ui-icon-button
+          svgIcon="setting-f"
+          [type]="ButtonType.TRANSPARENT"
+          [bordered]="false"
+        ></ui-icon-button>
+        <ui-icon-button
+          svgIcon="expand-o"
+          [type]="ButtonType.TRANSPARENT"
+          [bordered]="false"
+        ></ui-icon-button>
+      </div>
+    </div>
+
+    <div class="mt-5 w-[814px]">
+      <ui-progress></ui-progress>
+      <!-- <div class="w-full bg-gray-200 rounded-full h-1 mb-4 ">
+        <div class="bg-red-600 h-1 rounded-full " style="width: 45%"></div>
+      </div> -->
+    </div>
+    <div class="mt-5 icons w-[814px]">
+      <div class="flex" uiTooltip tooltipText="something like that">
+        <!-- src="https://lh3.googleusercontent.com/a/ACg8ocI-lSgcpYJXTgJBiexaKG_Hrb1jPCT0PqziIKfK2y_f=s96-c?sz=150" -->
+        <ui-avatar></ui-avatar>
+        <div class="ml-2">
+          <p >Tạo bởi</p>
+          <b>nguyenduykhanh1025</b>
+        </div>
+      </div>
+      <div class="flex w-1/4 justify-between">
+        <ui-button svgIcon="rollback-o" [isDisabled]="true"
+          >Thẻ ghi nhớ</ui-button
+        >
+        <!-- <ui-button-icon svgIcon="rollback-o"> Thẻ ghi nhớ </ui-button-icon> -->
+        <ui-icon class="flex" svgIcon="rollback-o"> </ui-icon>
+        <ui-icon class="flex" svgIcon="rollback-o"> </ui-icon>
+      </div>
+    </div>
+    <div class="mt-5 w-[814px] text-white">
+      <b class="prose-xl">Học sinh cũng đã xem các học phần:</b>
+      <div class="mt-5 flex w-[814px] overflow-x-auto gap-4 pb-5">
+        <div
+          class="w-[320px] h-[174px] flex-grow-0 flex-shrink-0 flex-auto"
+          *ngFor="let _ of [].constructor(20)"
+        >
+          <ui-card>
+            <b class="prose-lg block">Ôn tập DAY 3</b>
+            <ui-tag>Something here</ui-tag>
+            <div
+              class="flex absolute justify-between w-full bottom-0 left-0 mb-4"
+            >
+              <img
+                class="rounded-[50%] w-10 h-10 ml-4"
+                src="https://lh3.googleusercontent.com/a/ACg8ocI-lSgcpYJXTgJBiexaKG_Hrb1jPCT0PqziIKfK2y_f=s96-c?sz=150"
+              />
+              <ui-button class="mr-4">Xem trước</ui-button>
+            </div>
+          </ui-card>
+        </div>
+        <!-- <div
+          class="bg-[#2e3856] w-[320px] h-[174px] rounded-2xl p-4 relative flex-grow-0 flex-shrink-0 flex-auto"
+          *ngFor="let _ of [].constructor(20)"
+        >
+
+        </div> -->
+      </div>
+    </div>
+    <div class="mt-5 w-[814px] text-white">
+      <b class="prose-xl">Thuật ngữ trong học phần này (12)</b>
+      <div class="mt-5">
+        <div class="mb-3" *ngFor="let _ of [].constructor(20)">
+          <ui-card>
+            <div class="flex w-full justify-between">
+              <p>/ɔː/ I have a ball</p>
+              <p>Tôi có 1 quả bóng</p>
+              <div class="flex">
+                <ui-icon class="flex" svgIcon="rollback-o"> </ui-icon>
+                <ui-icon class="flex" svgIcon="rollback-o"> </ui-icon>
+              </div>
+            </div>
+          </ui-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
