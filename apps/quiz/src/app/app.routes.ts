@@ -14,6 +14,13 @@ export const appRoutes: Routes = [
             './features/fashion-flash-card/feature/fashion-flash-card/fashion-flash-card.component'
           ).then((c) => c.FashionFlashCardComponent),
       },
+      {
+        path: 'home',
+        loadComponent: () =>
+          import(
+            './features/home/feature/home/home.component'
+          ).then((c) => c.HomeComponent),
+      },
     ],
   },
 ];
