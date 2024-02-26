@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CardComponent } from '@nx-app/web/libs';
+import { CardComponent, ImageComponent, TagComponent } from '@nx-app/web/libs';
 
 import { RecommendedFeatureComponent } from '../../ui/recommended-feature/recommended-feature.component';
+import { UserLinkComponent } from '../../ui/user-link/user-link.component';
 import { RecommendedFeatureBgColor, RecommendedFeatureBgImage } from '../../utility/models';
 
 @Component({
@@ -11,7 +12,10 @@ import { RecommendedFeatureBgColor, RecommendedFeatureBgImage } from '../../util
   imports: [
     CommonModule,
     CardComponent,
-    RecommendedFeatureComponent
+    RecommendedFeatureComponent,
+    TagComponent,
+    ImageComponent,
+    UserLinkComponent
   ],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
