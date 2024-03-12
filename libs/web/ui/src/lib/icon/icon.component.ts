@@ -1,7 +1,14 @@
-import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from '@angular/core';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+
+import { IconSize } from './models/icon-size';
 import { SvgIcon } from './models/svg-icon';
 
 const ICON_SPRITE_FILE_PATH = '/assets/sprite.svg';
@@ -17,9 +24,22 @@ export class IconComponent {
   @Input() svgIcon: SvgIcon = '';
   @Input() ariaLabel: string | undefined;
   @Input() dataRotate: boolean | undefined;
+  @Input() size = IconSize.SMALL;
 
   get ariaHidden(): boolean {
     return !!this.ariaLabel;
+  }
+
+  get sizeClasses(): string {
+    const { SMALL, MEDIUM } = IconSize;
+    switch (this.size) {
+      case SMALL:
+        return 'h-6 w-6';
+      case MEDIUM:
+        return 'h-8 w-8';
+      default:
+        return '';
+    }
   }
 
   private iconRegistry = inject(MatIconRegistry);

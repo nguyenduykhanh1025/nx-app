@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,13 +7,13 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { SvgIcon } from '../../icon';
 import { IconComponent } from '../../icon/icon.component';
+import { SnipperSize } from '../../spinner';
 import { SpinnerComponent } from '../../spinner/spinner.component';
 import { ButtonSize } from '../models/button-size';
 import { ButtonType } from '../models/button-type';
-import { SvgIcon } from '../../icon';
-import { SnipperSize } from '../../spinner';
 
 @Component({
   selector: 'ui-button',

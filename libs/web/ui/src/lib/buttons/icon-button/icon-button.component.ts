@@ -1,13 +1,14 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   Input,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../button/button.component';
-import { IconButtonShape } from '../models/icon-button-shape';
-import { ButtonType } from '../models/button-type';
+
 import { IconComponent } from '../../icon/icon.component';
+import { ButtonComponent } from '../button/button.component';
+import { ButtonType } from '../models/button-type';
+import { IconButtonShape } from '../models/icon-button-shape';
 
 @Component({
   selector: 'ui-icon-button',

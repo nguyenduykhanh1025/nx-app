@@ -1,8 +1,13 @@
 <p class="text-xl font-bold mt-6">{{ title }}</p>
-<div class="mt-5 gap-4 pb-5 flex justify-between">
-  <quiz-lesson
-    class="flex-1"
-    *ngFor="let lesson of lessons"
-    [lesson]="lesson"
-  ></quiz-lesson>
+<div class="relative">
+  <div class="mt-5 gap-4 flex justify-between">
+    <quiz-lesson
+      class="flex-1"
+      *ngFor="let lesson of lessons"
+      [lesson]="lesson"
+    ></quiz-lesson>
+  </div>
+  <div class="carousel-container absolute right-0 top-0 h-full flex w-10 flex-col justify-center items-center cursor-pointer">
+    <ui-icon class="absolute text-lg" svgIcon="right-circle-o" [size]="IconSize.MEDIUM"></ui-icon>
+  </div>
 </div>

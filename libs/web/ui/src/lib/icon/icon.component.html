@@ -1,10 +1,9 @@
-<span class="inline-flex items-center">
+<span class="inline-flex items-center" [ngClass]="[sizeClasses]">
   <mat-icon
-  [svgIcon]="svgIcon"
-  [attr.aria-label]="ariaLabel ?? null"
-  [attr.aria-hidden]="ariaHidden"
-  [attr.data-rotate]="dataRotate"
-></mat-icon>
+    [svgIcon]="svgIcon"
+    [attr.aria-label]="ariaLabel ?? null"
+    [attr.aria-hidden]="ariaHidden"
+    [attr.data-rotate]="dataRotate"
+    [inline]="true"
+  ></mat-icon>
 </span>
-
-
