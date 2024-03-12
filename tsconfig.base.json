@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-app/web/libs": ["libs/web/ui/src/index.ts"]
+      "@nx-app/web/libs": ["libs/web/ui/src/index.ts"],
+      "@quiz-app/*": ["apps/quiz/src/app/*"]
     },
     "strictPropertyInitialization": false
   },

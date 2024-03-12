@@ -20,19 +20,6 @@
       content="Học với các câu hỏi hay hơn, kiểm soát nhiều hơn, và gợi ý"
     ></quiz-recommended-feature>
   </div>
-  <p class="text-xl font-bold mt-6">Gần đây</p>
-  <div class="grid grid-cols-3 gap-4 mt-3">
-    <ui-card *ngFor="let i of [1,2,3]">
-      <div class="flex justify-between">
-        <div>
-          <b class="prose-lg block">Ôn tập DAY 3</b>
-          <ui-tag>59 thuật ngữ</ui-tag>
-        </div>
-        <div class="w-28">
-          <ui-image src="https://o.quizlet.com/NQTLDXGUfAs1LY6qlXJ3rA_m.png?funnelUUID=078e59b1-0dce-4c67-9986-2d2050fb05ee"></ui-image>
-        </div>
-      </div>
-      <quiz-user-link></quiz-user-link>
-    </ui-card>
-  </div>
+  <quiz-lessons title="Gần đây" [lessons]="mockLessons()"></quiz-lessons>
+  <quiz-lessons title="Do bạn đã học SOCIAL MEDIA" [lessons]="mockLessons(2)"></quiz-lessons>
 </div>

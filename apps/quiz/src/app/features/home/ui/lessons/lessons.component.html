@@ -1,0 +1,8 @@
+<p class="text-xl font-bold mt-6">{{ title }}</p>
+<div class="mt-5 gap-4 pb-5 flex justify-between">
+  <quiz-lesson
+    class="flex-1"
+    *ngFor="let lesson of lessons"
+    [lesson]="lesson"
+  ></quiz-lesson>
+</div>
