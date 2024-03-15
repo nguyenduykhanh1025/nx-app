@@ -1,5 +1,5 @@
 <p class="text-xl font-bold mt-6">{{ title }}</p>
-<div class="relative">
+<div class="relative group">
   <div class="mt-5 gap-4 flex justify-between">
     <quiz-lesson
       class="flex-1"
@@ -7,7 +7,13 @@
       [lesson]="lesson"
     ></quiz-lesson>
   </div>
-  <div class="carousel-container absolute right-0 top-0 h-full flex w-10 flex-col justify-center items-center cursor-pointer">
-    <ui-icon class="absolute text-lg" svgIcon="right-circle-o" [size]="IconSize.MEDIUM"></ui-icon>
+  <div
+    class="hidden group-hover:flex carousel-container absolute right-0 top-0 h-full w-10 flex-col justify-center items-center cursor-pointer"
+  >
+    <ui-icon
+      class="absolute text-lg"
+      svgIcon="right-circle-o"
+      [size]="IconSize.MEDIUM"
+    ></ui-icon>
   </div>
 </div>

@@ -17,5 +17,5 @@ export class LessonsComponent {
   @Input() title: string;
   @Input({ required: true }) lessons: Lesson[];
 
-  IconSize = IconSize;
+  protected IconSize = IconSize;
 }
