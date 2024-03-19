@@ -1,20 +1,10 @@
 <p class="text-xl font-bold mt-6">{{ title }}</p>
 <div class="relative group">
-  <div class="mt-5 gap-4 flex justify-between" #contentTemplate>
-    <!-- <ng-content></ng-content> -->
+  <quiz-home-card-stepper direction="LEFT"></quiz-home-card-stepper>
+  <div class="z-0 mt-5 gap-4 flex justify-between" #contentTemplate>
     <ng-container *ngFor="let row of rows">
       <ng-container [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: row}"></ng-container>
     </ng-container>
-
   </div>
-  <!-- linear-gradient(270deg, #0a092d, #0000) -->
-  <div
-    class="hidden group-hover:flex bg-[red] absolute right-0 top-0 h-full w-10 flex-col justify-center items-center cursor-pointer"
-  >
-    <ui-icon
-      class="absolute text-lg"
-      svgIcon="right-circle-o"
-      [size]="IconSize.MEDIUM"
-    ></ui-icon>
-  </div>
+  <quiz-home-card-stepper direction="RIGHT"></quiz-home-card-stepper>
 </div>
