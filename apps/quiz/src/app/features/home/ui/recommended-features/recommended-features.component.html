@@ -1,5 +1,22 @@
-<quiz-home-cards title="Hãy thử các tính năng cập nhật này">
-  <quiz-recommended-feature
+<quiz-home-cards
+  title="Hãy thử các tính năng cập nhật này"
+  [rows]="recommendedFeatures"
+  [templateRef]="recommendedFeatureItem"
+  [tablePage]="{
+    size: 3,
+    totalElements: 3,
+    number: 1
+  }"
+>
+  <ng-template #recommendedFeatureItem let-recommendedFeature>
+    <quiz-recommended-feature
+      [bgColor]="recommendedFeature.bgColor"
+      [bgImage]="recommendedFeature.bgImage"
+      [headline]="recommendedFeature.headline"
+      [content]="recommendedFeature.content"
+    ></quiz-recommended-feature>
+  </ng-template>
+  <!-- <quiz-recommended-feature
     [bgColor]="RecommendedFeatureBgColor.PRIMARY"
     [bgImage]="RecommendedFeatureBgImage.HomeCarouselSearching"
     headline="Tìm kiếm mạnh mẽ hơn"
@@ -16,5 +33,5 @@
     [bgImage]="RecommendedFeatureBgImage.HomeCarouselAchievement"
     headline="Cải thiện điểm số với chế độ Học"
     content="Học với các câu hỏi hay hơn, kiểm soát nhiều hơn, và gợi ý"
-  ></quiz-recommended-feature>
+  ></quiz-recommended-feature> -->
 </quiz-home-cards>

@@ -1,4 +1,13 @@
-<quiz-home-cards [title]="title" [rows]="lessons" [templateRef]="lessonItem">
+<quiz-home-cards
+  [title]="title"
+  [rows]="lessons"
+  [templateRef]="lessonItem"
+  [tablePage]="{
+    size: 4,
+    totalElements: 100,
+    number: 1
+  }"
+>
   <ng-template #lessonItem let-lesson>
     <quiz-lesson class="flex-1" [lesson]="lesson"></quiz-lesson>
   </ng-template>

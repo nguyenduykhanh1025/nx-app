@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { mockLessons } from '../../../../data-access/mocks/lesson.mock';
 import { mockQuestions } from '../../../../data-access/mocks/question.mock';
+import { mockRecommendedFeatures } from '../../../../data-access/mocks/recommended-feature.mock';
 import { LessonsComponent } from '../../ui/lessons/lessons.component';
 import { QuestionsComponent } from '../../ui/questions/questions.component';
 import { RecommendedFeaturesComponent } from '../../ui/recommended-features/recommended-features.component';
@@ -17,4 +18,5 @@ import { RecommendedFeaturesComponent } from '../../ui/recommended-features/reco
 export class HomeComponent {
   mockLessons = mockLessons;
   mockQuestions = mockQuestions;
+  mockRecommendedFeatures = mockRecommendedFeatures;
 }

@@ -1,4 +1,13 @@
-<quiz-home-cards title="Câu hỏi phổ biến" [rows]="questions" [templateRef]="questionItem">
+<quiz-home-cards
+  title="Câu hỏi phổ biến"
+  [rows]="questions"
+  [templateRef]="questionItem"
+  [tablePage]="{
+    size: 4,
+    totalElements: 4,
+    number: 1
+  }"
+>
   <ng-template #questionItem let-question>
     <quiz-question class="flex-1" [question]="question"></quiz-question>
   </ng-template>
