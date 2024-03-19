@@ -1,1 +1,5 @@
-<p>questions works!</p>
+<quiz-home-cards title="Câu hỏi phổ biến" [rows]="questions" [templateRef]="questionItem">
+  <ng-template #questionItem let-question>
+    <quiz-question class="flex-1" [question]="question"></quiz-question>
+  </ng-template>
+</quiz-home-cards>

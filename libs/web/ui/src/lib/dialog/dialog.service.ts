@@ -1,10 +1,11 @@
-import { Injectable, Injector, Type, inject } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
-import { getDialogConfigDefault } from './utils/dialog.helper';
-import { DialogConfig } from './models/dialog.config';
-import { DialogRef } from './utils/dialog-ref';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { inject,Injectable, Injector, Type } from '@angular/core';
+
 import { DialogPortalComponent } from './dialog-portal/dialog-portal.component';
+import { DialogConfig } from './models/dialog.config';
+import { getDialogConfigDefault } from './utils/dialog.helper';
+import { DialogRef } from './utils/dialog-ref';
 
 @Injectable({
   providedIn: 'root',

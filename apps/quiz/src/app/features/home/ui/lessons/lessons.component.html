@@ -1,19 +1,5 @@
-<p class="text-xl font-bold mt-6">{{ title }}</p>
-<div class="relative group">
-  <div class="mt-5 gap-4 flex justify-between">
-    <quiz-lesson
-      class="flex-1"
-      *ngFor="let lesson of lessons"
-      [lesson]="lesson"
-    ></quiz-lesson>
-  </div>
-  <div
-    class="hidden group-hover:flex carousel-container absolute right-0 top-0 h-full w-10 flex-col justify-center items-center cursor-pointer"
-  >
-    <ui-icon
-      class="absolute text-lg"
-      svgIcon="right-circle-o"
-      [size]="IconSize.MEDIUM"
-    ></ui-icon>
-  </div>
-</div>
+<quiz-home-cards [title]="title" [rows]="lessons" [templateRef]="lessonItem">
+  <ng-template #lessonItem let-lesson>
+    <quiz-lesson class="flex-1" [lesson]="lesson"></quiz-lesson>
+  </ng-template>
+</quiz-home-cards>
