@@ -38,8 +38,6 @@ export class HomeCardsComponent {
   protected get isShowRightStep(): boolean {
     const { number, size, totalElements } = this.tablePage;
     // TODO: check this logic again
-    console.log(this.title, number * size < totalElements);
-
     return number * size < totalElements;
   }
 }

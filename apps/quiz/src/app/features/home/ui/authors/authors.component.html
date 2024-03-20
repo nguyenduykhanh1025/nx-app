@@ -1,0 +1,14 @@
+<quiz-home-cards
+  title="Tác giả hàng đầu"
+  [rows]="authors"
+  [templateRef]="authorItem"
+  [tablePage]="{
+    size: 4,
+    totalElements: 100,
+    number: 1
+  }"
+>
+  <ng-template #authorItem let-author>
+    <quiz-author class="flex-1" [author]="author"></quiz-author>
+  </ng-template>
+</quiz-home-cards>
