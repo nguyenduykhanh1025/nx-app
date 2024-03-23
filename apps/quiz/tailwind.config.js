@@ -14,7 +14,7 @@ module.exports = {
       backgroundImage: {
         'home-carousel-searching': "url('assets/images/home-carousel-searching.png')",
         'home-carousel-achievement': "url('assets/images/home-carousel-achievement.svg')",
-        'home-carousel-improving': "url('assets/images/home-carousel-improving.png')"
+        'home-carousel-improving': "url('assets/images/home-carousel-improving.png')",
       }
     },
   },

@@ -14,9 +14,9 @@ import {
   TextFieldComponent,
   TooltipDirective,
 } from '@nx-app/web/libs';
+import { FooterComponent } from '@quiz-app/shared/footer/feature/footer/footer.component';
+import { HeaderComponent } from '@quiz-app/shared/header/feature/header/header.component';
 
-import { FooterComponent } from '../../shared/footer/feature/footer/footer.component';
-import { HeaderComponent } from '../../shared/header/feature/header/header.component';
 
 @Component({
   selector: 'quiz-main-layout',

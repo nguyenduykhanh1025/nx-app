@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-
 @Component({
   standalone: true,
-  imports: [RouterModule, MainLayoutComponent],
+  imports: [RouterModule],
   selector: 'quiz-app-root',
   templateUrl: './app.component.html',
 })

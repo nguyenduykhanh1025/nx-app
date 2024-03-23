@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { BlankLayoutComponent, MainLayoutComponent } from './layout';
 
 export const appRoutes: Routes = [
   {
@@ -23,4 +22,17 @@ export const appRoutes: Routes = [
       },
     ],
   },
+  {
+    path: 'auth',
+    component: BlankLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import(
+            './features/auth/feature/auth/auth.component'
+          ).then((c) => c.AuthComponent),
+      }
+    ]
+  }
 ];
