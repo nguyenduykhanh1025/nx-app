@@ -1,0 +1,23 @@
+<div *ngIf="control.touched && control.invalid" class="text-red-600">
+  <!-- Default validation error -->
+  <!-- TODO: custom other default validators -->
+  <ng-container *ngIf="control.hasError('required')">
+    <p>Hey! this field is required 😠</p>
+  </ng-container>
+  <ng-container *ngIf="control.hasError('email')">
+    <p>Nah nah! it is an email 🤦‍♀️</p>
+  </ng-container>
+  <ng-container *ngIf="control.hasError('maxlength')">
+    <p>
+      Oh no! the length of this field is only
+      <b>{{ control.getError('maxlength').requiredLength }}</b> characters 🤷‍♂️
+    </p>
+  </ng-container>
+
+  <!-- Custom validation error -->
+  <ng-container *ngFor="let key of errorKeys">
+    <ng-container *ngIf="control.hasError(key)">
+      {{ errorMessage[key] }}
+    </ng-container>
+  </ng-container>
+</div>

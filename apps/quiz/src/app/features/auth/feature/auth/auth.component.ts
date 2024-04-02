@@ -1,12 +1,29 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   inject,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { TextFieldComponent } from '@nx-app/web/libs';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { AuthFormGroup } from '../../data-access/auth-form.model';
+
+export const weekendValidator: ValidatorFn = (
+  control: AbstractControl
+): null | { weekend: true } => {
+  const value = control.value;
+  if (value === 'nguyenduykhanh1025@gmail.com') {
+    return { weekend: true };
+  }
+  return null;
+};
 
 @Component({
   selector: 'quiz-auth',
@@ -16,14 +33,15 @@ import { AuthFormGroup } from '../../data-access/auth-form.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthComponent {
-  readonly #fb = inject(FormBuilder);
+  readonly #cdr = inject(ChangeDetectorRef);
 
-  readonly loginForm = this.#fb.group({
-    username: '',
-    password: '',
-  }) as AuthFormGroup;
+  readonly loginForm = new FormGroup({
+    username: new FormControl('', [Validators.required, Validators.email, weekendValidator]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(5),
+    ]),
+  });
 
-  handleSubmit(): void {
-    console.log(this.loginForm.value);
-  }
+  handleSubmit(): void {}
 }

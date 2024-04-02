@@ -1,27 +1,29 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { InputFieldSize } from './models/input-field-size';
-import { InputFieldType } from './models/input-field-type';
 import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { LazyGetter } from 'lazy-get-decorator';
+
+import { InputFieldSize, InputFieldType, ValidationErrorMassage } from '../../data-access/models';
+import { ValidationErrorComponent } from '../../ui/validation-error/validation-error.component';
 
 @Component({
   selector: 'ui-textfield',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ValidationErrorComponent],
   templateUrl: './textfield.component.html',
 })
 export class TextFieldComponent {
+
   @Input() size = InputFieldSize.MEDIUM;
   @Input() type = InputFieldType.EMAIL;
-  @Input() control?: AbstractControl;
+  @Input() control: AbstractControl;
   @Input() placeholder = '';
+  @Input() errorMessage: ValidationErrorMassage;
 
   get sizeClasses(): string {
     switch (this.size) {
