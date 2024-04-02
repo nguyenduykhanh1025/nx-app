@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-} from '@angular/core';
-import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
-import { LazyGetter } from 'lazy-get-decorator';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { InputFieldSize, InputFieldType, ValidationErrorMassage } from '../../data-access/models';
+import {
+  InputFieldSize,
+  InputFieldType,
+  ValidationErrorMassage,
+} from '../../data-access/models';
 import { ValidationErrorComponent } from '../../ui/validation-error/validation-error.component';
+import { FormControlComponent } from '../form-control/form-control.component';
 
 @Component({
   selector: 'ui-textfield',
@@ -17,11 +17,9 @@ import { ValidationErrorComponent } from '../../ui/validation-error/validation-e
   imports: [CommonModule, ReactiveFormsModule, ValidationErrorComponent],
   templateUrl: './textfield.component.html',
 })
-export class TextFieldComponent {
-
+export class TextFieldComponent extends FormControlComponent {
   @Input() size = InputFieldSize.MEDIUM;
   @Input() type = InputFieldType.EMAIL;
-  @Input() control: AbstractControl;
   @Input() placeholder = '';
   @Input() errorMessage: ValidationErrorMassage;
 
@@ -36,22 +34,5 @@ export class TextFieldComponent {
       default:
         return '';
     }
-  }
-
-  @LazyGetter() // every time this component is input, getter will be re-run => use it to restrict refresh
-  get controlName(): string | null {
-    if (!this.control) {
-      return null;
-    }
-
-    const { parent } = this.control;
-
-    if (!parent) {
-      return null;
-    }
-
-    return Object.keys(parent.controls).find((keyFromGroup) => {
-      return this.control === parent.get(keyFromGroup);
-    }) || null;
   }
 }

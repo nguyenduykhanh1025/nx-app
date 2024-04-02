@@ -6,42 +6,29 @@ import {
   inject,
 } from '@angular/core';
 import {
-  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { TextFieldComponent } from '@nx-app/web/libs';
-
-export const weekendValidator: ValidatorFn = (
-  control: AbstractControl
-): null | { weekend: true } => {
-  const value = control.value;
-  if (value === 'nguyenduykhanh1025@gmail.com') {
-    return { weekend: true };
-  }
-  return null;
-};
+import { CheckboxComponent, TextFieldComponent } from '@nx-app/web/libs';
 
 @Component({
   selector: 'quiz-auth',
   standalone: true,
-  imports: [CommonModule, TextFieldComponent, ReactiveFormsModule],
+  imports: [CommonModule, TextFieldComponent, ReactiveFormsModule, CheckboxComponent],
   templateUrl: './auth.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthComponent {
-  readonly #cdr = inject(ChangeDetectorRef);
 
   readonly loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.email, weekendValidator]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.maxLength(5),
-    ]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+    hasRememberMe: new FormControl(false)
   });
 
-  handleSubmit(): void {}
+  handleSubmit(): void {
+    console.log(this.loginForm.value);
+  }
 }

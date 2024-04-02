@@ -1,13 +1,13 @@
 <div
   class="focus-within:border-b-4 block w-full border-b-text-input-primary-active border-0 rounded-xl"
-  [formGroup]="$any(control?.parent)"
+  [formGroup]="$any(control.parent)"
 >
   <input
     [type]="type"
     id="first_name"
     class="bg-white text-black text-base block border-none rounded-xl w-full p-2.5 focus:ring-primary"
     [ngClass]="[sizeClasses]"
-    placeholder="placeholder"
+    [placeholder]="placeholder"
     [formControlName]="controlName"
     required
   />

@@ -35,10 +35,8 @@
               >Your email</label
             >
             <ui-textfield
-              [control]="loginForm.controls.username"
-              [errorMessage]="{
-                weekend: 'oh shit'
-              }"
+              [control]="loginForm.controls.email"
+              placeholder="Enter your email"
             ></ui-textfield>
           </div>
           <div>
@@ -49,10 +47,13 @@
             >
             <ui-textfield
               [control]="loginForm.controls.password"
+              placeholder="Enter your password"
             ></ui-textfield>
           </div>
           <div class="flex items-center justify-between">
-            <div class="flex items-start">
+            <ui-checkbox [control]="loginForm.controls.hasRememberMe" label="Remember me"></ui-checkbox>
+
+            <!-- <div class="flex items-start">
               <div class="flex items-center h-5">
                 <input
                   id="remember"
@@ -67,7 +68,7 @@
                   >Remember me</label
                 >
               </div>
-            </div>
+            </div> -->
             <a
               href="#"
               class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"

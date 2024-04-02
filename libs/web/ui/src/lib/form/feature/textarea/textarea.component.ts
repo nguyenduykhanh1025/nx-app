@@ -1,9 +1,11 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   Input,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { FormControlComponent } from '../form-control/form-control.component';
 
 const TEXT_AREA_DEFAULT_ROW = 4;
 
@@ -14,6 +16,6 @@ const TEXT_AREA_DEFAULT_ROW = 4;
   imports: [CommonModule],
   templateUrl: './textarea.component.html',
 })
-export class TextAreaComponent {
+export class TextAreaComponent extends FormControlComponent{
   @Input() rows = TEXT_AREA_DEFAULT_ROW;
 }
