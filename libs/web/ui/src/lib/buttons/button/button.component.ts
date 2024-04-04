@@ -16,7 +16,7 @@ import { ButtonSize } from '../models/button-size';
 import { ButtonType } from '../models/button-type';
 
 @Component({
-  selector: 'ui-button',
+  selector: 'ui-button, [uiButton]',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IconComponent, SpinnerComponent],
