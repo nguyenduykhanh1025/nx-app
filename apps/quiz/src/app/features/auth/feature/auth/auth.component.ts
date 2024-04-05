@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -12,6 +11,8 @@ import {
   CheckboxComponent,
   TextFieldComponent,
 } from '@nx-app/web/libs';
+import { Auth } from '@quiz-app/data-access/models';
+import { AuthService } from '@quiz-app/data-access/services/auth.service';
 
 @Component({
   selector: 'quiz-auth',
@@ -27,6 +28,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthComponent {
+  readonly #authService = inject(AuthService);
+
   readonly loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
@@ -37,6 +40,6 @@ export class AuthComponent {
     if (this.loginForm.invalid) {
       return;
     }
-    console.log(this.loginForm.value);
+    this.#authService.login(this.loginForm.value as Auth)
   }
 }

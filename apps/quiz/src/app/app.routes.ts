@@ -1,10 +1,14 @@
 import { Routes } from '@angular/router';
+
+import { authGuard } from './data-access/guards/auth.guard';
+import { unAuthGuard } from './data-access/guards/un-auth.guard';
 import { BlankLayoutComponent, MainLayoutComponent } from './layout';
 
 export const appRoutes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: 'fashion-flash-cards',
@@ -25,6 +29,7 @@ export const appRoutes: Routes = [
   {
     path: 'auth',
     component: BlankLayoutComponent,
+    canActivate: [unAuthGuard],
     children: [
       {
         path: '',
