@@ -3,14 +3,15 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { LazyGetter } from 'lazy-get-decorator';
 
+import { ValidationErrorMassage } from '../../data-access/models';
+
 @Component({
   standalone: true,
-  imports: [CommonModule],
   template: '',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormControlComponent {
   @Input() control: AbstractControl;
+  @Input() errorMessage: ValidationErrorMassage;
 
   @LazyGetter() // every time this component is input, getter will be re-run => use it to restrict refresh
   get controlName(): string | null {

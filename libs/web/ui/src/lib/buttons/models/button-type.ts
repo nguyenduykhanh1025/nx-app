@@ -1,5 +1,6 @@
 export enum ButtonType {
   PRIMARY,
   SECONDARY,
-  TRANSPARENT
+  TRANSPARENT,
+  LINK
 }

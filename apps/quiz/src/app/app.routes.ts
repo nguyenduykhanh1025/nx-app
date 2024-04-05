@@ -11,6 +11,13 @@ export const appRoutes: Routes = [
     canActivate: [authGuard],
     children: [
       {
+        path: 'home',
+        loadComponent: () =>
+          import(
+            './features/home/feature/home/home.component'
+          ).then((c) => c.HomeComponent),
+      },
+      {
         path: 'fashion-flash-cards',
         loadComponent: () =>
           import(
@@ -18,18 +25,18 @@ export const appRoutes: Routes = [
           ).then((c) => c.FashionFlashCardComponent),
       },
       {
-        path: 'home',
+        path: 'create-set',
         loadComponent: () =>
           import(
-            './features/home/feature/home/home.component'
-          ).then((c) => c.HomeComponent),
+            './features/create-set/feature/create-set/create-set.component'
+          ).then((c) => c.CreateSetComponent),
       },
     ],
   },
   {
     path: 'auth',
     component: BlankLayoutComponent,
-    canActivate: [unAuthGuard],
+    // canActivate: [unAuthGuard],
     children: [
       {
         path: '',

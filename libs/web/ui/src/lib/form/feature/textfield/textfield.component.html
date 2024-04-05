@@ -1,15 +1,14 @@
 <div
-  class="focus-within:border-b-4 block w-full border-b-text-input-primary-active border-0 rounded-xl"
+  class="focus-within:border-b-4 block w-full border-b-text-input-primary-active border-none rounded-xl"
   [formGroup]="$any(control.parent)"
 >
   <input
     [type]="type"
     id="first_name"
-    class="bg-white text-black text-base block border-none rounded-xl w-full p-2.5 focus:ring-primary"
-    [ngClass]="[sizeClasses]"
+    class="bg-secondary text-white text-base block w-full p-2.5 focus:ring-primary appearance-none outline-none"
+    [ngClass]="[sizeClasses,  variantClasses]"
     [placeholder]="placeholder"
     [formControlName]="controlName"
-    required
   />
 </div>
 <ui-validation-error [control]="control" [errorMessage]="errorMessage"></ui-validation-error>

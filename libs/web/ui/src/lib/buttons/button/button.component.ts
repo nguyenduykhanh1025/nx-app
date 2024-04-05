@@ -46,6 +46,8 @@ export class ButtonComponent {
         return 'bg-button-secondary-active hover:bg-button-secondary-hover';
       case ButtonType.TRANSPARENT:
         return 'bg-transparent border-[#586380] hover:bg-button-transparent-hover';
+      case ButtonType.LINK:
+        return 'bg-transparent border-none hover:bg-button-transparent-hover';
       default:
         return '';
     }

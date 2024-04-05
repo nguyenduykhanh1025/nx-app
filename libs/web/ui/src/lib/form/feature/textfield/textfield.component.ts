@@ -4,8 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import {
   InputFieldSize,
+  InputFieldStyleVariant,
   InputFieldType,
-  ValidationErrorMassage,
 } from '../../data-access/models';
 import { ValidationErrorComponent } from '../../ui/validation-error/validation-error.component';
 import { FormControlComponent } from '../form-control/form-control.component';
@@ -19,9 +19,9 @@ import { FormControlComponent } from '../form-control/form-control.component';
 })
 export class TextFieldComponent extends FormControlComponent {
   @Input() size = InputFieldSize.MEDIUM;
-  @Input() type = InputFieldType.EMAIL;
+  @Input() type: InputFieldType;
   @Input() placeholder = '';
-  @Input() errorMessage: ValidationErrorMassage;
+  @Input() styleVariant: keyof typeof InputFieldStyleVariant = 'NORMAL';
 
   get sizeClasses(): string {
     switch (this.size) {
@@ -33,6 +33,15 @@ export class TextFieldComponent extends FormControlComponent {
         return 'p-3.5';
       default:
         return '';
+    }
+  }
+
+  get variantClasses(): string {
+    switch (this.styleVariant) {
+      case 'CARD':
+        return 'rounded-none border-b-2 border-b-white border-solid';
+      default:
+        return 'rounded-xl border-none';
     }
   }
 }
