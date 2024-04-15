@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -11,10 +11,14 @@ import {
   ButtonSize,
   ButtonType,
   CardComponent,
+  DialogService,
   IconButtonComponent,
   TextAreaComponent,
   TextFieldComponent,
 } from '@nx-app/web/libs';
+import { LanguageSelectionComponent } from '../../ui/language-selection/language-selection.component';
+import { MenuDirective } from '../../../../../../../../libs/web/ui/src/lib/menu/feature/menu.directive';
+import { MenuComponent } from 'libs/web/ui/src/lib/menu/feature/menu.component';
 
 @Component({
   selector: 'quiz-create-set',
@@ -27,6 +31,8 @@ import {
     TextAreaComponent,
     IconButtonComponent,
     CardComponent,
+    MenuDirective,
+    MenuComponent
   ],
   templateUrl: './create-set.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,6 +40,8 @@ import {
 export class CreateSetComponent {
   protected readonly ButtonType = ButtonType;
   protected readonly ButtonSize = ButtonSize;
+
+  readonly #dialogService = inject(DialogService);
 
   readonly createSetForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
@@ -46,4 +54,7 @@ export class CreateSetComponent {
     schoolName: new FormControl(''),
     subjectName: new FormControl(''),
   });
+
+  handleLanguageSelection() {
+  }
 }
