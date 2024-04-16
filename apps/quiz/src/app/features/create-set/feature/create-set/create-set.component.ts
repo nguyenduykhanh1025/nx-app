@@ -19,6 +19,8 @@ import {
 import { LanguageSelectionComponent } from '../../ui/language-selection/language-selection.component';
 import { MenuDirective } from '../../../../../../../../libs/web/ui/src/lib/menu/feature/menu.directive';
 import { MenuComponent } from 'libs/web/ui/src/lib/menu/feature/menu.component';
+import { PopoverDirective } from '../../../../../../../../libs/web/ui/src/lib/popover/feature/popover.directive';
+import { PopoverComponent } from 'libs/web/ui/src/lib/popover/feature/popover/popover.component';
 
 @Component({
   selector: 'quiz-create-set',
@@ -32,7 +34,9 @@ import { MenuComponent } from 'libs/web/ui/src/lib/menu/feature/menu.component';
     IconButtonComponent,
     CardComponent,
     MenuDirective,
-    MenuComponent
+    MenuComponent,
+    PopoverDirective,
+    PopoverComponent,
   ],
   templateUrl: './create-set.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

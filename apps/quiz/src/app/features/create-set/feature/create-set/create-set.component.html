@@ -1,11 +1,11 @@
+<div></div>
 <section class="px-80 py-5">
-  <p [uiMenu]="menu">dasdasdas</p>
-  <ui-menu #menu>
+  <ui-popover #popover>
     bla
-  </ui-menu>
+  </ui-popover>
   <div class="flex items-center justify-between">
     <p class="text-2xl font-bold">Tạo học phần mới</p>
-    <ui-button [type]="ButtonType.SECONDARY">Tạo</ui-button>
+    <ui-button [type]="ButtonType.SECONDARY" [uiPopover]="popover">Tạo</ui-button>
   </div>
   <form class="mt-10" [formGroup]="createSetForm">
     <div>
