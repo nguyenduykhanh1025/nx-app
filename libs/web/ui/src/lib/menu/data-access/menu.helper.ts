@@ -5,7 +5,6 @@ export const getMenuConfigDefault = (overlay: Overlay): OverlayConfig => {
     minWidth: '200px',
     backdropClass: 'ui-menu-backdrop',
     panelClass: 'ui-menu-panel',
-    scrollStrategy: overlay.scrollStrategies.reposition(),
     hasBackdrop: true,
   });
 

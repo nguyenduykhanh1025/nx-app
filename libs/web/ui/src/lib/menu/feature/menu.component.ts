@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/**
+ *
+ */
 @Component({
   selector: 'ui-menu',
   standalone: true,

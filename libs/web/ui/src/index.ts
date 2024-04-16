@@ -6,6 +6,7 @@ export * from './lib/flash-card'
 export * from './lib/form';
 export * from './lib/icon';
 export * from './lib/image';
+export * from './lib/menu';
 export * from './lib/models';
 export * from './lib/progress';
 export * from './lib/tag';
