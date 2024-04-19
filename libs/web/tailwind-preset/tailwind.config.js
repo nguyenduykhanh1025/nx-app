@@ -10,6 +10,7 @@ module.exports = {
         active: '#ffffff',
         success: '#18AE79',
         error: '#D05700',
+        picked: '#ffcd20',
         button: {
           primary: {
             active: '#4255ff',
@@ -44,6 +45,10 @@ module.exports = {
         tooltip: {
           primary: '#58637f',
         },
+        menu: {
+          primary: '#1a1c28',
+          title: '#d4d8e3',
+        }
       },
     },
   },

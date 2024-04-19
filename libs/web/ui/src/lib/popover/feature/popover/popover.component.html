@@ -1,15 +1,51 @@
 <ng-template>
-  <div
-    class="flex flex-col bg-[#1a1c28] min-w-[16rem] max-h-[16rem] overflow-auto"
-  >
-    <ng-container *ngFor="let item of items">
-      <a
-        href="#"
-        aria-current="true"
-        class="block w-full px-4 py-2 text-whitecursor-pointer hover:bg-[#ffcd20]"
-      >
-        Profile
-      </a>
-    </ng-container>
+  <div class="flex flex-col bg-menu-primary mt-2">
+    <form [formGroup]="form">
+      <div class="my-2 mx-2">
+        <ui-textfield
+          [control]="form.controls.search"
+          [cdkTrapFocus]="true"
+          [cdkTrapFocusAutoCapture]="true"
+          styleVariant="TRANSPARENT"
+          placeholder="Search something"
+        ></ui-textfield>
+      </div>
+    </form>
+    <div class="min-w-[16rem] max-h-[16rem] overflow-auto">
+      <ng-container *ngFor="let item of items">
+        <div *ngIf="item.childrenItems; else noChild" class="my-2">
+          <h4 class="px-4 uppercase font-bold text-menu-title">
+            {{ item.title }}
+          </h4>
+          <ng-container *ngFor="let child of item.childrenItems">
+            <ng-container
+              [ngTemplateOutlet]="menuItemTmpl"
+              [ngTemplateOutletContext]="{
+                $implicit: child
+              }"
+            ></ng-container>
+          </ng-container>
+          <ui-divider *ngIf="items[items.length - 1] !== item"></ui-divider>
+        </div>
+        <ng-template #noChild>
+          <ng-container
+            [ngTemplateOutlet]="menuItemTmpl"
+            [ngTemplateOutletContext]="{
+              $implicit: item
+            }"
+          ></ng-container>
+        </ng-template>
+
+        <ng-template #menuItemTmpl let-item>
+          <div
+            aria-current="true"
+            class="block w-full px-4 py-2 text-white cursor-pointer hover:bg-picked"
+            (click)="onClickItem(item)"
+          >
+            {{ item.title }}
+          </div>
+        </ng-template>
+      </ng-container>
+    </div>
   </div>
 </ng-template>

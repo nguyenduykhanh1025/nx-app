@@ -1,11 +1,14 @@
 <div></div>
 <section class="px-80 py-5">
-  <ui-popover #popover>
-    bla
+  <ui-popover
+    #popover
+    [items]="mockedPopoverLanguages"
+    (uiItemClick)="handleLanguageSelection($event)"
+  >
   </ui-popover>
   <div class="flex items-center justify-between">
     <p class="text-2xl font-bold">Tạo học phần mới</p>
-    <ui-button [type]="ButtonType.SECONDARY" [uiPopover]="popover">Tạo</ui-button>
+    <ui-button [type]="ButtonType.SECONDARY">Tạo</ui-button>
   </div>
   <form class="mt-10" [formGroup]="createSetForm">
     <div>
@@ -107,8 +110,10 @@
             ></ui-textfield>
             <div class="flex justify-between items-center">
               <p class="text-sm">THUẬT NGỮ</p>
-              <ui-button [type]="ButtonType.LINK" [size]="ButtonSize.SMALL"
-              (uiClick)="handleLanguageSelection()"
+              <ui-button
+                [type]="ButtonType.LINK"
+                [size]="ButtonSize.SMALL"
+                [uiPopover]="popover"
                 >CHỌN NGÔN NGỮ</ui-button
               >
             </div>
@@ -120,13 +125,16 @@
             ></ui-textfield>
             <div class="flex justify-between items-center">
               <p class="text-sm">ĐỊNH NGHĨA</p>
-              <ui-button [type]="ButtonType.LINK" [size]="ButtonSize.SMALL"
+              <ui-button
+                [type]="ButtonType.LINK"
+                [size]="ButtonSize.SMALL"
+                [uiPopover]="popover"
                 >CHỌN NGÔN NGỮ</ui-button
               >
             </div>
           </div>
           <div
-            class="border-dashed border-white border-2 w-24 h-16 flex items-center justify-center  cursor-pointer"
+            class="border-dashed border-white border-2 w-24 h-16 flex items-center justify-center cursor-pointer"
           >
             Image
           </div>
@@ -135,7 +143,12 @@
     </div>
     <div class="mt-4">
       <ui-card>
-        <ui-button svgIcon="plus-o" [type]="ButtonType.LINK" [size]="ButtonSize.LARGE">THÊM THẺ</ui-button>
+        <ui-button
+          svgIcon="plus-o"
+          [type]="ButtonType.LINK"
+          [size]="ButtonSize.LARGE"
+          >THÊM THẺ</ui-button
+        >
       </ui-card>
     </div>
   </form>

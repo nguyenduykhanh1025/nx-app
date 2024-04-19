@@ -21,6 +21,8 @@ import { MenuDirective } from '../../../../../../../../libs/web/ui/src/lib/menu/
 import { MenuComponent } from 'libs/web/ui/src/lib/menu/feature/menu.component';
 import { PopoverDirective } from '../../../../../../../../libs/web/ui/src/lib/popover/feature/popover.directive';
 import { PopoverComponent } from 'libs/web/ui/src/lib/popover/feature/popover/popover.component';
+import { mockPopoverLanguages } from '../../../../data-access/mocks/popover-languages.mock';
+import { PopoverItem } from 'libs/web/ui/src/lib/popover/data-access/popover-item.model';
 
 @Component({
   selector: 'quiz-create-set',
@@ -59,6 +61,9 @@ export class CreateSetComponent {
     subjectName: new FormControl(''),
   });
 
-  handleLanguageSelection() {
+  protected readonly mockedPopoverLanguages = mockPopoverLanguages();
+
+  handleLanguageSelection(event: PopoverItem) {
+    console.log(event);
   }
 }

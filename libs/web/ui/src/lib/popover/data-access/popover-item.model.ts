@@ -1,6 +1,6 @@
 export interface PopoverItem {
   title: string;
-  items?: PopoverItem[];
+  childrenItems?: PopoverItem[];
 
   [key: string]: any;
 }

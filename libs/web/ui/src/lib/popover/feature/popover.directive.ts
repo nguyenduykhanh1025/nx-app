@@ -1,6 +1,20 @@
-import { Directive, ElementRef, HostListener, inject, Input, OnDestroy, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  inject,
+  Input,
+  OnDestroy,
+  OnInit,
+  ViewContainerRef,
+} from '@angular/core';
 import { PopoverComponent } from './popover/popover.component';
-import { getMenuConfigDefault, OverlayState, POSITION_MAP, PositionMapKey } from '../../overlay/data-access';
+import {
+  getMenuConfigDefault,
+  OverlayState,
+  POSITION_MAP,
+  PositionMapKey,
+} from '../../overlay/data-access';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { filter, merge, Subscription } from 'rxjs';
 import { TemplatePortal } from '@angular/cdk/portal';
@@ -10,7 +24,7 @@ import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
   selector: '[uiPopover]',
   standalone: true,
 })
-export class PopoverDirective implements OnDestroy{
+export class PopoverDirective implements OnDestroy {
   @Input() uiPopover: PopoverComponent;
   @Input() uiMenuPosition: keyof typeof PositionMapKey = 'bottomLeft';
 
@@ -70,7 +84,8 @@ export class PopoverDirective implements OnDestroy{
         .keydownEvents()
         .pipe(
           filter((event) => event.keyCode === ESCAPE && !hasModifierKey(event))
-        )
+        ),
+      this.uiPopover.uiItemClick
     ).subscribe(() => {
       this.#closeMenu();
     });

@@ -1,4 +1,5 @@
 export enum InputFieldStyleVariant {
-  CARD = 'card',
-  NORMAL = 'normal'
+  CARD,
+  NORMAL,
+  TRANSPARENT
 }

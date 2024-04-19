@@ -2,6 +2,7 @@ export * from './lib/avatar'
 export * from './lib/buttons';
 export * from './lib/card';
 export * from './lib/dialog';
+export * from './lib/divider';
 export * from './lib/flash-card'
 export * from './lib/form';
 export * from './lib/icon';

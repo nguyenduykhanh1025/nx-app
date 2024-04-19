@@ -39,7 +39,9 @@ export class TextFieldComponent extends FormControlComponent {
   get variantClasses(): string {
     switch (this.styleVariant) {
       case 'CARD':
-        return 'rounded-none border-b-2 border-b-white border-solid';
+        return 'rounded-none border-b-2 border-solid';
+      case 'TRANSPARENT':
+        return 'rounded-none border-b-2 border-solid bg-transparent ';
       default:
         return 'rounded-xl border-none';
     }
