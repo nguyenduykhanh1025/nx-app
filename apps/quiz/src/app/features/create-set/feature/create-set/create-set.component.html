@@ -82,21 +82,22 @@
     </div>
   </div>
 
-  <form class="mt-4">
-    <div class="mt-4" *ngFor="let _ of [].constructor(5)">
+  <div class="mt-4" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="mt-4" *ngFor="let term of terms" cdkDrag>
       <ui-card>
         <div
           class="flex justify-between items-center border-b-2 border-primary"
         >
-          <p>1</p>
+          <p>{{ term }}</p>
           <div>
             <ui-icon-button
-              svgIcon="delete-o"
+              cdkDragHandle
+              svgIcon="holder-o"
               [type]="ButtonType.TRANSPARENT"
               [size]="ButtonSize.SMALL"
             ></ui-icon-button>
             <ui-icon-button
-              svgIcon="holder-o"
+              svgIcon="delete-o"
               [type]="ButtonType.TRANSPARENT"
               [size]="ButtonSize.SMALL"
             ></ui-icon-button>
@@ -151,7 +152,7 @@
         >
       </ui-card>
     </div>
-  </form>
+  </div>
 
   <div class="mt-4 flex flex-row-reverse">
     <ui-button [size]="ButtonSize.LARGE">Tạo</ui-button>

@@ -11,18 +11,17 @@ import {
   ButtonSize,
   ButtonType,
   CardComponent,
-  DialogService,
   IconButtonComponent,
   TextAreaComponent,
   TextFieldComponent,
+  PopoverItem,
+  MenuDirective,
+  MenuComponent,
+  PopoverDirective,
+  PopoverComponent
 } from '@nx-app/web/libs';
-import { LanguageSelectionComponent } from '../../ui/language-selection/language-selection.component';
-import { MenuDirective } from '../../../../../../../../libs/web/ui/src/lib/menu/feature/menu.directive';
-import { MenuComponent } from 'libs/web/ui/src/lib/menu/feature/menu.component';
-import { PopoverDirective } from '../../../../../../../../libs/web/ui/src/lib/popover/feature/popover.directive';
-import { PopoverComponent } from 'libs/web/ui/src/lib/popover/feature/popover/popover.component';
-import { mockPopoverLanguages } from '../../../../data-access/mocks/popover-languages.mock';
-import { PopoverItem } from 'libs/web/ui/src/lib/popover/data-access/popover-item.model';
+import { mockPopoverLanguages } from '@quiz-app/data-access/mocks';
+import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray, CdkDragHandle} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'quiz-create-set',
@@ -39,15 +38,17 @@ import { PopoverItem } from 'libs/web/ui/src/lib/popover/data-access/popover-ite
     MenuComponent,
     PopoverDirective,
     PopoverComponent,
+    CdkDropList,
+    CdkDrag,
+    CdkDragHandle
   ],
   templateUrl: './create-set.component.html',
+  styleUrls: ['./create-set.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateSetComponent {
   protected readonly ButtonType = ButtonType;
   protected readonly ButtonSize = ButtonSize;
-
-  readonly #dialogService = inject(DialogService);
 
   readonly createSetForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
@@ -61,9 +62,15 @@ export class CreateSetComponent {
     subjectName: new FormControl(''),
   });
 
+  protected readonly terms = [1,2,3,4,5,6];
+
   protected readonly mockedPopoverLanguages = mockPopoverLanguages();
 
   handleLanguageSelection(event: PopoverItem) {
     console.log(event);
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.terms, event.previousIndex, event.currentIndex);
   }
 }

@@ -5,7 +5,6 @@ import {
   inject,
   Input,
   OnDestroy,
-  OnInit,
   ViewContainerRef,
 } from '@angular/core';
 import { PopoverComponent } from './popover/popover.component';
