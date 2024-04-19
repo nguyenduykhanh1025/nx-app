@@ -18,10 +18,16 @@ import {
   MenuDirective,
   MenuComponent,
   PopoverDirective,
-  PopoverComponent
+  PopoverComponent,
 } from '@nx-app/web/libs';
 import { mockPopoverLanguages } from '@quiz-app/data-access/mocks';
-import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray, CdkDragHandle} from '@angular/cdk/drag-drop';
+import {
+  CdkDragDrop,
+  CdkDropList,
+  CdkDrag,
+  moveItemInArray,
+  CdkDragHandle,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'quiz-create-set',
@@ -40,7 +46,7 @@ import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray, CdkDragHandle} from 
     PopoverComponent,
     CdkDropList,
     CdkDrag,
-    CdkDragHandle
+    CdkDragHandle,
   ],
   templateUrl: './create-set.component.html',
   styleUrls: ['./create-set.component.scss'],
@@ -62,7 +68,7 @@ export class CreateSetComponent {
     subjectName: new FormControl(''),
   });
 
-  protected readonly terms = [1,2,3,4,5,6];
+  protected readonly terms = [1, 2, 3, 4, 5, 6];
 
   protected readonly mockedPopoverLanguages = mockPopoverLanguages();
 

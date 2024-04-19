@@ -1,11 +1,4 @@
-<div></div>
 <section class="px-80 py-5">
-  <ui-popover
-    #popover
-    [items]="mockedPopoverLanguages"
-    (uiItemClick)="handleLanguageSelection($event)"
-  >
-  </ui-popover>
   <div class="flex items-center justify-between">
     <p class="text-2xl font-bold">Tạo học phần mới</p>
     <ui-button [type]="ButtonType.SECONDARY">Tạo</ui-button>
@@ -158,3 +151,10 @@
     <ui-button [size]="ButtonSize.LARGE">Tạo</ui-button>
   </div>
 </section>
+
+<ui-popover
+  #popover
+  [items]="mockedPopoverLanguages"
+  (uiItemClick)="handleLanguageSelection($event)"
+>
+</ui-popover>
