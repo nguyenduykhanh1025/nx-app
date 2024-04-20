@@ -1,0 +1,20 @@
+<div class="relative group">
+  <ui-carousel-card-stepper
+    direction="LEFT"
+    *ngIf="isShowLeftStep"
+    (click)="onPrevious()"
+  ></ui-carousel-card-stepper>
+  <div class="z-0 mt-5 gap-4 flex justify-between" #contentTemplate>
+    <section class="flex-1" *ngFor="let row of rows">
+      <ng-container
+        [ngTemplateOutlet]="templateRef"
+        [ngTemplateOutletContext]="{ $implicit: row }"
+      ></ng-container>
+    </section>
+  </div>
+  <ui-carousel-card-stepper
+    direction="RIGHT"
+    *ngIf="isShowRightStep"
+    (click)="onNext()"
+  ></ui-carousel-card-stepper>
+</div>

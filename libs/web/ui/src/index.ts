@@ -13,3 +13,4 @@ export * from './lib/popover';
 export * from './lib/progress';
 export * from './lib/tag';
 export * from './lib/tooltip';
+export * from './lib/carousel';

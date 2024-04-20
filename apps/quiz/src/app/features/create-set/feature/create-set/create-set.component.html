@@ -76,7 +76,7 @@
   </div>
 
   <div class="mt-4" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div class="mt-4" *ngFor="let term of terms" cdkDrag>
+    <div class="mt-4" *ngFor="let term of terms;let i = index" cdkDrag>
       <ui-card>
         <div
           class="flex justify-between items-center border-b-2 border-primary"
@@ -129,11 +129,21 @@
           </div>
           <div
             class="border-dashed border-white border-2 w-24 h-16 flex items-center justify-center cursor-pointer"
+            (click)="onToggleImagesRecommendation(i)"
           >
             Image
           </div>
         </div>
       </ui-card>
+
+      <div *ngIf="idxShownImagesRecommendation === i">
+        <ui-carousel-card
+          [rows]="[{}, {}, {}, {}, {}]"
+          [templateRef]="carouselCardTmpl"
+          [pagination]="pagination"
+        ></ui-carousel-card>
+      </div>
+
     </div>
     <div class="mt-4">
       <ui-card>
@@ -158,3 +168,11 @@
   (uiItemClick)="handleLanguageSelection($event)"
 >
 </ui-popover>
+
+<ng-template #carouselCardTmpl>
+  <img
+    class="h-auto max-w-full rounded-lg"
+    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
+    alt=""
+  />
+</ng-template>

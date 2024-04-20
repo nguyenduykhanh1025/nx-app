@@ -1,21 +1,8 @@
 <div class="mt-14">
   <p class="text-xl font-bold mt-6">{{ title }}</p>
-  <div class="relative group">
-    <quiz-home-card-stepper
-      direction="LEFT"
-      *ngIf="isShowLeftStep"
-    ></quiz-home-card-stepper>
-    <div class="z-0 mt-5 gap-4 flex justify-between" #contentTemplate>
-      <section class="flex-1" *ngFor="let row of rows">
-        <ng-container
-          [ngTemplateOutlet]="templateRef"
-          [ngTemplateOutletContext]="{ $implicit: row }"
-        ></ng-container>
-      </section>
-    </div>
-    <quiz-home-card-stepper
-      direction="RIGHT"
-      *ngIf="isShowRightStep"
-    ></quiz-home-card-stepper>
-  </div>
+  <ui-carousel-card
+    [templateRef]="templateRef"
+    [pagination]="pagination"
+    [rows]="rows"
+  ></ui-carousel-card>
 </div>
