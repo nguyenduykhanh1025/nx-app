@@ -137,11 +137,7 @@
       </ui-card>
 
       <div *ngIf="idxShownImagesRecommendation === i">
-        <ui-carousel-card
-          [rows]="[{}, {}, {}, {}, {}]"
-          [templateRef]="carouselCardTmpl"
-          [pagination]="pagination"
-        ></ui-carousel-card>
+        <quiz-images-recommendation></quiz-images-recommendation>
       </div>
 
     </div>
@@ -168,11 +164,3 @@
   (uiItemClick)="handleLanguageSelection($event)"
 >
 </ui-popover>
-
-<ng-template #carouselCardTmpl>
-  <img
-    class="h-auto max-w-full rounded-lg"
-    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
-    alt=""
-  />
-</ng-template>

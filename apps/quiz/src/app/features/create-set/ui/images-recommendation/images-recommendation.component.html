@@ -1,0 +1,24 @@
+<section class="mt-4">
+  <div class="flex">
+    <ui-textfield
+      styleVariant="TRANSPARENT"
+      [control]="form.controls.search"
+    ></ui-textfield>
+    <ui-button class="ml-4">Hoặc tải lên ảnh của riêng bạn</ui-button>
+  </div>
+  <div>
+    <ui-carousel-card
+      [rows]="[{}, {}, {}, {}, {}]"
+      [templateRef]="carouselCardTmpl"
+      [pagination]="pagination"
+    ></ui-carousel-card>
+  </div>
+</section>
+
+<ng-template #carouselCardTmpl>
+  <img
+    class="h-auto max-w-full rounded-lg"
+    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
+    alt=""
+  />
+</ng-template>

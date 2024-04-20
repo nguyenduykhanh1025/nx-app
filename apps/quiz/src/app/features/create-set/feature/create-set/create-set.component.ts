@@ -30,6 +30,7 @@ import {
   CdkDragHandle,
 } from '@angular/cdk/drag-drop';
 import { Pagination } from 'libs/web/ui/src/data-access';
+import { ImagesRecommendationComponent } from '../../ui/images-recommendation/images-recommendation.component';
 
 @Component({
   selector: 'quiz-create-set',
@@ -49,7 +50,7 @@ import { Pagination } from 'libs/web/ui/src/data-access';
     CdkDropList,
     CdkDrag,
     CdkDragHandle,
-    CarouselCardComponent,
+    ImagesRecommendationComponent
   ],
   templateUrl: './create-set.component.html',
   styleUrls: ['./create-set.component.scss'],
@@ -69,11 +70,6 @@ export class CreateSetComponent {
 
   protected readonly terms = [1, 2, 3, 4, 5, 6];
   protected readonly mockedPopoverLanguages = mockPopoverLanguages();
-  protected readonly pagination: Pagination = {
-    totalElements: 10,
-    size: 5,
-    number: 1,
-  };
   protected readonly ButtonType = ButtonType;
   protected readonly ButtonSize = ButtonSize;
 
