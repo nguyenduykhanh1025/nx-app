@@ -1,11 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import {
   ButtonComponent,
   CheckboxComponent,
@@ -13,6 +19,8 @@ import {
 } from '@nx-app/web/libs';
 import { Auth } from '@quiz-app/data-access/models';
 import { AuthService } from '@quiz-app/data-access/services/auth.service';
+import { AuthActions } from '../../data-access/store/auth.actions';
+import { selectToken } from '../../data-access/store/auth.selectors';
 
 @Component({
   selector: 'quiz-auth',
@@ -29,6 +37,7 @@ import { AuthService } from '@quiz-app/data-access/services/auth.service';
 })
 export class AuthComponent {
   readonly #authService = inject(AuthService);
+  readonly #store = inject(Store);
 
   readonly loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -40,6 +49,6 @@ export class AuthComponent {
     if (this.loginForm.invalid) {
       return;
     }
-    this.#authService.login(this.loginForm.value as Auth)
+    this.#authService.login(this.loginForm.value as Auth);
   }
 }
