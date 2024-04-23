@@ -1,4 +1,6 @@
 export * from './auth.model'
 export * from './author.model'
+export * from './error-response.model'
 export * from './lesson.model'
 export * from './question.model'
+export * from './store-loading-status.model'

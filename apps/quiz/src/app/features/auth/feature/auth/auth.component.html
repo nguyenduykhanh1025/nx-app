@@ -54,7 +54,10 @@
               >Forgot password?</a
             >
           </div>
-          <ui-button (uiClick)="handleSubmit()" [isDisabled]="loginForm.invalid"
+          <ui-button
+            (uiClick)="handleSubmit()"
+            [isDisabled]="loginForm.invalid"
+            [isLoading]="!!(isLoadingSignInButton$ | ngrxPush)"
             >Sign in</ui-button
           >
           <p class="text-sm font-light text-white">

@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  OnInit,
 } from '@angular/core';
 import {
   FormControl,
@@ -18,9 +17,10 @@ import {
   TextFieldComponent,
 } from '@nx-app/web/libs';
 import { Auth } from '@quiz-app/data-access/models';
-import { AuthService } from '@quiz-app/data-access/services/auth.service';
 import { AuthActions } from '../../data-access/store/auth.actions';
-import { selectToken } from '../../data-access/store/auth.selectors';
+import { selectLoadingStatus } from '../../data-access/store/auth.selectors';
+import { map } from 'rxjs';
+import { PushPipe } from '@ngrx/component';
 
 @Component({
   selector: 'quiz-auth',
@@ -31,13 +31,16 @@ import { selectToken } from '../../data-access/store/auth.selectors';
     ReactiveFormsModule,
     CheckboxComponent,
     ButtonComponent,
+    PushPipe,
   ],
   templateUrl: './auth.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthComponent {
-  readonly #authService = inject(AuthService);
   readonly #store = inject(Store);
+  readonly isLoadingSignInButton$ = this.#store
+    .select(selectLoadingStatus)
+    .pipe(map((loadingStatus) => loadingStatus === 'RUNNING'));
 
   readonly loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -49,6 +52,8 @@ export class AuthComponent {
     if (this.loginForm.invalid) {
       return;
     }
-    this.#authService.login(this.loginForm.value as Auth);
+    this.#store.dispatch(
+      AuthActions.login({ auth: this.loginForm.value as Auth })
+    );
   }
 }

@@ -7,10 +7,12 @@ import {
 
 import { appRoutes } from './app.routes';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import {
   AUTH_DATA_STORE_FEATURE_KEY,
   authDataStoreFeature,
-} from './features/auth/data-access/store/auth.reducers';
+  AuthEffects,
+} from './features/auth/data-access/store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +20,12 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       HttpClientModule,
       StoreModule.forRoot({}),
-      StoreModule.forFeature(AUTH_DATA_STORE_FEATURE_KEY, authDataStoreFeature.reducer)
+      EffectsModule.forRoot([]),
+      StoreModule.forFeature(
+        AUTH_DATA_STORE_FEATURE_KEY,
+        authDataStoreFeature.reducer
+      ),
+      EffectsModule.forFeature([AuthEffects])
     ),
   ],
 };
