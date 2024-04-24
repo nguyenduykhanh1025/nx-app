@@ -14,12 +14,9 @@ import {
   IconButtonComponent,
   TextAreaComponent,
   TextFieldComponent,
-  PopoverItem,
   MenuDirective,
   MenuComponent,
-  PopoverDirective,
   PopoverComponent,
-  CarouselCardComponent,
 } from '@nx-app/web/libs';
 import { mockPopoverLanguages } from '@quiz-app/data-access/mocks';
 import {
@@ -29,8 +26,8 @@ import {
   moveItemInArray,
   CdkDragHandle,
 } from '@angular/cdk/drag-drop';
-import { Pagination } from 'libs/web/ui/src/data-access';
 import { ImagesRecommendationComponent } from '../../ui/images-recommendation/images-recommendation.component';
+import { PopoverItem } from 'libs/web/ui/src/lib/menu/data-access/models';
 
 @Component({
   selector: 'quiz-create-set',
@@ -45,12 +42,12 @@ import { ImagesRecommendationComponent } from '../../ui/images-recommendation/im
     CardComponent,
     MenuDirective,
     MenuComponent,
-    PopoverDirective,
+    MenuDirective,
     PopoverComponent,
     CdkDropList,
     CdkDrag,
     CdkDragHandle,
-    ImagesRecommendationComponent
+    ImagesRecommendationComponent,
   ],
   templateUrl: './create-set.component.html',
   styleUrls: ['./create-set.component.scss'],

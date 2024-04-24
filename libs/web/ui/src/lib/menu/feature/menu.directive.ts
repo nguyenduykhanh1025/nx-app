@@ -5,28 +5,27 @@ import {
   inject,
   Input,
   OnDestroy,
-  OnInit,
   ViewContainerRef,
 } from '@angular/core';
-import { MenuComponent } from './menu.component';
-import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-import { getMenuConfigDefault } from '../data-access/menu.helper';
-import { TemplatePortal } from '@angular/cdk/portal';
 import {
+  getMenuConfigDefault,
+  OverlayState,
   POSITION_MAP,
   PositionMapKey,
-} from '../data-access/connection-position-pair';
+} from '../../overlay/data-access';
+import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { filter, merge, Subscription } from 'rxjs';
+import { TemplatePortal } from '@angular/cdk/portal';
 import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
-import { MenuState } from '../data-access/menu-state';
+import { MenuAbstractComponent } from '../utility';
 
 @Directive({
   selector: '[uiMenu]',
   standalone: true,
 })
-export class MenuDirective implements OnInit, OnDestroy {
-  @Input() uiMenu: MenuComponent;
-  @Input() uiMenuPosition: keyof typeof PositionMapKey = 'rightTop';
+export class MenuDirective implements OnDestroy {
+  @Input() uiMenu: MenuAbstractComponent;
+  @Input() uiMenuPosition: keyof typeof PositionMapKey = 'bottomLeft';
 
   readonly #el = inject(ElementRef);
   readonly #overlay = inject(Overlay);
@@ -36,9 +35,7 @@ export class MenuDirective implements OnInit, OnDestroy {
   readonly #subscription = new Subscription();
 
   #overlayRef: OverlayRef;
-  #menuState: MenuState;
-
-  ngOnInit(): void {}
+  #menuState: OverlayState;
 
   ngOnDestroy(): void {
     this.#subscription.unsubscribe();
@@ -46,10 +43,10 @@ export class MenuDirective implements OnInit, OnDestroy {
 
   @HostListener('click')
   onClick() {
-    if (this.#menuState === MenuState.OPENED) {
+    if (this.#menuState === OverlayState.OPENED) {
       return;
     }
-    this.#menuState = MenuState.OPENED;
+    this.#menuState = OverlayState.OPENED;
 
     const mergedConfig = this.#mergeConfig({});
     this.#overlayRef = this.#overlay.create(mergedConfig);
@@ -86,7 +83,8 @@ export class MenuDirective implements OnInit, OnDestroy {
         .keydownEvents()
         .pipe(
           filter((event) => event.keyCode === ESCAPE && !hasModifierKey(event))
-        )
+        ),
+      this.uiMenu.uiItemClick
     ).subscribe(() => {
       this.#closeMenu();
     });
@@ -95,11 +93,11 @@ export class MenuDirective implements OnInit, OnDestroy {
   }
 
   #closeMenu() {
-    if (this.#menuState === MenuState.CLOSED) {
+    if (this.#menuState === OverlayState.CLOSED) {
       return;
     }
 
-    this.#menuState = MenuState.CLOSED;
+    this.#menuState = OverlayState.CLOSED;
     this.#overlayRef?.detach();
   }
 }

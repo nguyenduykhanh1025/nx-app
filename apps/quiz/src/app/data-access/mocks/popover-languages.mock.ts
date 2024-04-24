@@ -1,4 +1,4 @@
-import { PopoverItem } from 'libs/web/ui/src/lib/popover/data-access/popover-item.model';
+import { PopoverItem } from "libs/web/ui/src/lib/menu/data-access/models";
 
 export const mockPopoverLanguages = (): PopoverItem[] => {
   return [

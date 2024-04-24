@@ -4,16 +4,15 @@ import {
   EventEmitter,
   Input,
   Output,
-  TemplateRef,
-  ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PopoverItem } from '../../data-access/popover-item.model';
 import { DividerComponent } from '../../../divider';
 import { TextFieldComponent } from '../../../form';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { A11yModule } from '@angular/cdk/a11y';
 import { Subject } from 'rxjs';
+import { MenuAbstractComponent } from '../../utility';
+import { PopoverItem } from '../../data-access/models';
 
 @Component({
   selector: 'ui-popover',
@@ -28,12 +27,10 @@ import { Subject } from 'rxjs';
   templateUrl: './popover.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PopoverComponent {
-  @ViewChild(TemplateRef, { static: true }) menuTemplate: TemplateRef<any>;
-
+export class PopoverComponent extends MenuAbstractComponent {
   @Input() items: PopoverItem[];
 
-  @Output() uiItemClick = new EventEmitter<PopoverItem>();
+  @Output() override uiItemClick = new EventEmitter<PopoverItem>();
 
   close$ = new Subject<boolean>();
 

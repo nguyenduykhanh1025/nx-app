@@ -9,7 +9,6 @@ export * from './lib/icon';
 export * from './lib/image';
 export * from './lib/menu';
 export * from './lib/models';
-export * from './lib/popover';
 export * from './lib/progress';
 export * from './lib/tag';
 export * from './lib/tooltip';
