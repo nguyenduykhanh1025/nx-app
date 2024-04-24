@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MenuAbstractComponent } from 'libs/web/ui/src/lib/menu/utility';
 
 @Component({
-  selector: 'quiz-my-library',
+  selector: 'quiz-menu',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './my-library.component.html',
+  templateUrl: './menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MyLibraryComponent {}
+export class MenuComponent extends MenuAbstractComponent{}

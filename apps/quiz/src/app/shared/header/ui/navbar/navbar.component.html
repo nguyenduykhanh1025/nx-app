@@ -1,0 +1,20 @@
+<div class="flex space-x-4">
+  <ng-container *ngFor="let appMenu of navbarList">
+    <quiz-navbar-item
+      *ngIf="appMenu.template"
+      [uiMenu]="popover"
+      (click)="openNavbarTemplate(appMenu)"
+      [title]="appMenu.title"
+      class="hover:bg-violet-600"
+    ></quiz-navbar-item>
+    <quiz-navbar-item
+      *ngIf="appMenu.link"
+      routerLinkActive="text-button-primary-active"
+      [routerLink]="[appMenu.link]"
+      [title]="appMenu.title"
+    ></quiz-navbar-item>
+  </ng-container>
+</div>
+<quiz-menu #popover>
+  <ng-template #dynamicMenu></ng-template>
+</quiz-menu>
