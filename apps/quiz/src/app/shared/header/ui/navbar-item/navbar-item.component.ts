@@ -10,4 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarItemComponent {
   @Input() title: string;
+  @Input() isActive = false;
+
+  get activeClasses(): string {
+    return this.isActive ? 'border-b-4 border-indigo-500' : '';
+  }
 }
