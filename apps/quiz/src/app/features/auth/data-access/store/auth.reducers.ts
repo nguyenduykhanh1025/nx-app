@@ -39,9 +39,17 @@ export const authDataStoreFeature = createFeature({
     ),
     on(
       AuthActions.login,
-      (state, action): AuthState => ({
+      (state): AuthState => ({
         ...state,
         loadingStatus: 'RUNNING',
+      })
+    ),
+    on(
+      AuthActions.initAuthSuccess,
+      (state, action): AuthState => ({
+        ...state,
+        token: action.token,
+        isAuthenticated: true,
       })
     )
   ),

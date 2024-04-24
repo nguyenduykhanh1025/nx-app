@@ -1,8 +1,16 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '@quiz-app/features/auth/data-access/services';
+import { map } from 'rxjs';
 
 export const unAuthGuard: CanActivateFn = () => {
-  return inject(AuthService).authenticated() ? inject(Router).createUrlTree(['/home']) : true;
+  const router = inject(Router);
+
+  return inject(AuthService)
+    .authenticated()
+    .pipe(
+      map((isAuthenticated) => {
+        return isAuthenticated ? router.createUrlTree(['/home']) : true;
+      })
+    );
 };

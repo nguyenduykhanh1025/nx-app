@@ -36,7 +36,7 @@ export const appRoutes: Routes = [
   {
     path: 'auth',
     component: BlankLayoutComponent,
-    // canActivate: [unAuthGuard],
+    canActivate: [unAuthGuard],
     children: [
       {
         path: '',

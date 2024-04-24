@@ -13,4 +13,6 @@ export const AuthActions = {
     props<{ errorResponse: ErrorResponse }>()
   ),
   login: createAction(`[${source}] start to login`, props<{ auth: Auth }>()),
+  initAuth: createAction(`[${source}] init auth`),
+  initAuthSuccess: createAction(`[${source}] init auth successfully`, props<{ token: string }>()),
 };
