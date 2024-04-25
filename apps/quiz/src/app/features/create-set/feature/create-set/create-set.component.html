@@ -1,7 +1,7 @@
 <section class="px-80 py-5">
   <div class="flex items-center justify-between">
     <p class="text-2xl font-bold">Tạo học phần mới</p>
-    <ui-button [type]="ButtonType.SECONDARY">Tạo</ui-button>
+    <ui-button type="SECONDARY">Tạo</ui-button>
   </div>
   <form class="mt-10" [formGroup]="createSetForm">
     <div>
@@ -38,20 +38,20 @@
     <div class="flex gap-4">
       <ui-button
         svgIcon="plus-o"
-        [type]="ButtonType.TRANSPARENT"
-        [size]="ButtonSize.SMALL"
+        type="TRANSPARENT"
+        size="SMALL"
         >Nhập</ui-button
       >
       <ui-button
         svgIcon="plus-o"
-        [type]="ButtonType.TRANSPARENT"
-        [size]="ButtonSize.SMALL"
+        type="TRANSPARENT"
+        size="SMALL"
         >Thêm hồ sơ</ui-button
       >
       <ui-button
         svgIcon="file-text-o"
-        [type]="ButtonType.TRANSPARENT"
-        [size]="ButtonSize.SMALL"
+        type="TRANSPARENT"
+        size="SMALL"
         >Tạo ghi chú</ui-button
       >
     </div>
@@ -59,18 +59,18 @@
     <div class="flex gap-4">
       <ui-icon-button
         svgIcon="setting-f"
-        [type]="ButtonType.TRANSPARENT"
-        [size]="ButtonSize.SMALL"
+        type="TRANSPARENT"
+        size="SMALL"
       ></ui-icon-button>
       <ui-icon-button
         svgIcon="retweet-o"
-        [type]="ButtonType.TRANSPARENT"
-        [size]="ButtonSize.SMALL"
+        type="TRANSPARENT"
+        size="SMALL"
       ></ui-icon-button>
       <ui-icon-button
         svgIcon="code-o"
-        [type]="ButtonType.TRANSPARENT"
-        [size]="ButtonSize.SMALL"
+        type="TRANSPARENT"
+        size="SMALL"
       ></ui-icon-button>
     </div>
   </div>
@@ -86,13 +86,13 @@
             <ui-icon-button
               cdkDragHandle
               svgIcon="holder-o"
-              [type]="ButtonType.TRANSPARENT"
-              [size]="ButtonSize.SMALL"
+              type="TRANSPARENT"
+              size="SMALL"
             ></ui-icon-button>
             <ui-icon-button
               svgIcon="delete-o"
-              [type]="ButtonType.TRANSPARENT"
-              [size]="ButtonSize.SMALL"
+              type="TRANSPARENT"
+              size="SMALL"
             ></ui-icon-button>
           </div>
         </div>
@@ -105,8 +105,8 @@
             <div class="flex justify-between items-center">
               <p class="text-sm">THUẬT NGỮ</p>
               <ui-button
-                [type]="ButtonType.LINK"
-                [size]="ButtonSize.SMALL"
+                type="LINK"
+                size="SMALL"
                 [uiMenu]="popover"
                 >CHỌN NGÔN NGỮ</ui-button
               >
@@ -120,8 +120,8 @@
             <div class="flex justify-between items-center">
               <p class="text-sm">ĐỊNH NGHĨA</p>
               <ui-button
-                [type]="ButtonType.LINK"
-                [size]="ButtonSize.SMALL"
+                type="LINK"
+                size="SMALL"
                 [uiMenu]="popover"
                 >CHỌN NGÔN NGỮ</ui-button
               >
@@ -145,8 +145,8 @@
       <ui-card>
         <ui-button
           svgIcon="plus-o"
-          [type]="ButtonType.LINK"
-          [size]="ButtonSize.LARGE"
+          type="LINK"
+          size="LARGE"
           >THÊM THẺ</ui-button
         >
       </ui-card>
@@ -154,7 +154,7 @@
   </div>
 
   <div class="mt-4 flex flex-row-reverse">
-    <ui-button [size]="ButtonSize.LARGE">Tạo</ui-button>
+    <ui-button size="LARGE">Tạo</ui-button>
   </div>
 </section>
 

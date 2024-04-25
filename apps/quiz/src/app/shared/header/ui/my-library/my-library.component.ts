@@ -5,7 +5,6 @@ import {
   TabComponent,
   TabsetComponent,
 } from '@nx-app/web/libs';
-import { ButtonType } from '../../../../../../../../libs/web/ui/src/lib/buttons/models/button-type';
 
 @Component({
   selector: 'quiz-my-library',
@@ -15,5 +14,4 @@ import { ButtonType } from '../../../../../../../../libs/web/ui/src/lib/buttons/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MyLibraryComponent {
-  readonly ButtonType = ButtonType;
 }

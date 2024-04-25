@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AvatarComponent, AvatarSize, ButtonComponent } from '@nx-app/web/libs';
-import { ButtonType } from '../../../../../../../../libs/web/ui/src/lib/buttons/models/button-type';
+import { AvatarComponent, ButtonComponent } from '@nx-app/web/libs';
 
 @Component({
   selector: 'quiz-profile',
@@ -11,6 +10,4 @@ import { ButtonType } from '../../../../../../../../libs/web/ui/src/lib/buttons/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileComponent {
-  readonly AvatarSize = AvatarSize;
-  readonly ButtonType = ButtonType;
 }

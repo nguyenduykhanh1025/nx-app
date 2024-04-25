@@ -1,0 +1,11 @@
+<div
+  class="flex items-center w-full justify-center rounded-md text-sm font-semibold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 max-w-ma h-full"
+  [ngClass]="[typeClasses, sizeClasses, disabledClasses, borderedClasses]"
+  [attr.aria-disabled]="isDisabled"
+>
+  <ui-spinner *ngIf="isLoading" [size]="'MEDIUM'"></ui-spinner>
+  <ui-icon class="contents" *ngIf="isShowIcon" [svgIcon]="svgIcon"></ui-icon>
+  <span class="ml-1">
+    <ng-content></ng-content>
+  </span>
+</div>

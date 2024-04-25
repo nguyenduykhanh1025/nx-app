@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { TabComponent } from '../tab/tab.component';
-import { ButtonComponent, ButtonType } from '../../../buttons';
+import { ButtonComponent } from '../../../buttons';
 
 @Component({
   selector: 'ui-tabset',
@@ -21,8 +21,6 @@ export class TabsetComponent {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
   idxActiveTab = 0;
-
-  readonly ButtonType = ButtonType;
 
   handleSelectedIndexChange(idx: number): void {
     this.idxActiveTab = idx;

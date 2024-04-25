@@ -72,8 +72,8 @@
             <ui-icon-button
               svgIcon="search-o"
               slot="after"
-              [shape]="IconButtonShape.SQUARE"
-              [type]="ButtonType.LINK"
+              shape="SQUARE"
+              type="LINK"
             ></ui-icon-button>
           </ui-textfield>
         </form>
@@ -83,19 +83,19 @@
       >
         <ui-icon-button
           svgIcon="bell-o"
-          [type]="ButtonType.LINK"
+          type="LINK"
         ></ui-icon-button>
         <!-- Profile dropdown -->
         <ui-avatar
           class="ml-4 cursor-pointer"
           src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-          [size]="AvatarSize.SMALL"
+          size="SMALL"
           [uiMenu]="profileTmpl"
         ></ui-avatar>
       </div>
     </div>
   </div>
 </nav>
-<quiz-menu #profileTmpl>
+<ui-menu #profileTmpl>
   <quiz-profile></quiz-profile>
-</quiz-menu>
+</ui-menu>

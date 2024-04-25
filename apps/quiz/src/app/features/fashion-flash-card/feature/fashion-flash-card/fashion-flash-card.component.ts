@@ -2,10 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   AvatarComponent,
-  AvatarShape,
   ButtonComponent,
-  ButtonSize,
-  ButtonType,
   CardComponent,
   DialogService,
   FlashCardComponent,
@@ -38,9 +35,6 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FashionFlashCardComponent {
-  ButtonType = ButtonType;
-  ButtonSize = ButtonSize;
-  AvatarShape = AvatarShape;
 
   dialogService = inject(DialogService);
 

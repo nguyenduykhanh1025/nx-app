@@ -7,8 +7,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { Navbar } from '../../data-access/models/navbar.model';
 import { MyLibraryComponent } from '../my-library/my-library.component';
-import { MenuDirective } from '@nx-app/web/libs';
-import { MenuComponent } from '../menu/menu.component';
+import { MenuComponent, MenuDirective } from '@nx-app/web/libs';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NavbarItemComponent } from '../navbar-item/navbar-item.component';
 

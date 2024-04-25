@@ -8,8 +8,6 @@ import {
 } from '@angular/forms';
 import {
   ButtonComponent,
-  ButtonSize,
-  ButtonType,
   CardComponent,
   IconButtonComponent,
   TextAreaComponent,
@@ -67,8 +65,6 @@ export class CreateSetComponent {
 
   protected readonly terms = [1, 2, 3, 4, 5, 6];
   protected readonly mockedPopoverLanguages = mockPopoverLanguages();
-  protected readonly ButtonType = ButtonType;
-  protected readonly ButtonSize = ButtonSize;
 
   protected idxShownImagesRecommendation = -1;
 

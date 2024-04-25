@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent, IconSize } from '../../../icon';
+import { IconComponent } from '../../../icon';
 import { CarouseStepperDirection } from '../../data-access/models';
 
 @Component({
@@ -12,8 +12,6 @@ import { CarouseStepperDirection } from '../../data-access/models';
 })
 export class CarouselCardStepperComponent {
   @Input() direction: keyof typeof CarouseStepperDirection = 'LEFT';
-
-  protected IconSize = IconSize;
 
   protected get directionClasses(): string {
     if (this.direction === 'LEFT') {

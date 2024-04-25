@@ -1,1 +1,1 @@
-export * from './image.component'
+export * from './feature/image/image.component';

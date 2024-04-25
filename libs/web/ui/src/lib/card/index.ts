@@ -1,2 +1,1 @@
-export * from './card.component'
-export * from './models/card-type'
+export * from './feature/card/card.component';

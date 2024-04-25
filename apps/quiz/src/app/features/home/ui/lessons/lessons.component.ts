@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IconSize } from '@nx-app/web/libs';
 
 import { Lesson } from '../../../../data-access/models/lesson.model';
 import { HomeCardsComponent } from '../home-cards/home-cards.component';
@@ -16,6 +15,4 @@ import { LessonComponent } from '../lesson/lesson.component';
 export class LessonsComponent {
   @Input() title: string;
   @Input({ required: true }) lessons: Lesson[];
-
-  protected IconSize = IconSize;
 }

@@ -1,2 +1,1 @@
-export * from './spinner.component'
-export * from './models/snipper-size'
+export * from './feature/spinner/spinner.component';

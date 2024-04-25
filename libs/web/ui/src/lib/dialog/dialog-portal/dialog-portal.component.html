@@ -10,7 +10,7 @@
       </h3>
       <ui-icon-button
         svgIcon="close-o"
-        [type]="ButtonType.TRANSPARENT"
+        type="TRANSPARENT"
         (uiClick)="onCloseClick()"
         *ngIf="dialogConfig.isShownCloseButton$ | async"
       ></ui-icon-button>
@@ -22,7 +22,7 @@
     <!-- Modal footer -->
     <div class="p-4 md:p-5 border-t rounded-b border-none">
       <ui-button
-        [type]="ButtonType.TRANSPARENT"
+        type="TRANSPARENT"
         *ngIf="isEnableNoButton$ | async"
         (uiClick)="onCloseClick()"
       >
@@ -30,7 +30,7 @@
       </ui-button>
       <div class="mt-2">
         <ui-button
-          [type]="ButtonType.PRIMARY"
+          type="PRIMARY"
           *ngIf="isEnableYesButton$ | async"
         >
           OK

@@ -16,7 +16,7 @@ import { DialogRef } from '../utils/dialog-ref';
 import { DialogConfig } from '../models/dialog.config';
 import { AnimationState } from '../utils/constants';
 import { DialogType } from '../models/dialog-type';
-import { ButtonComponent, ButtonSize, ButtonType, IconButtonComponent } from '../../buttons';
+import { ButtonComponent, ButtonType, IconButtonComponent } from '../../buttons';
 
 @Component({
   selector: 'ui-dialog-container',
@@ -38,9 +38,6 @@ export class DialogPortalComponent<TContentComponent = any>
 
   readonly #dialogRef = inject(DialogRef);
   readonly dialogConfig = inject(DialogConfig);
-
-  readonly ButtonType = ButtonType;
-  readonly ButtonSize = ButtonSize;
 
   contentComponentType: Type<TContentComponent>;
   animationState = AnimationState.Enter;

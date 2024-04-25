@@ -13,7 +13,7 @@
       [ngClass]="[idx === idxActiveTab ? 'border-b-2 border-button-primary-active' : '']"
     >
       <ui-button
-        [type]="ButtonType.LINK"
+        type="LINK"
         (uiClick)="handleSelectedIndexChange(idx)"
       >
         {{ tab.title }}

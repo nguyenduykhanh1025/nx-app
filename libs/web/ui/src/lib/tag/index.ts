@@ -1,3 +1,2 @@
-export * from './models/tag-color'
-export * from './models/tag-size'
-export * from './tag.component'
+export * from './data-access/models';
+export * from './feature/tag/tag.component';

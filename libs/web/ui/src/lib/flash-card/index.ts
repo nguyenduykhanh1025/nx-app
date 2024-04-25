@@ -1,1 +1,1 @@
-export * from './flash-card.component'
+export * from './feature/flash-card/flash-card.component';

@@ -9,6 +9,7 @@ import {
 } from '../../data-access/models';
 import { ValidationErrorComponent } from '../../ui/validation-error/validation-error.component';
 import { FormControlComponent } from '../form-control/form-control.component';
+import { UiSize } from 'libs/web/ui/src/data-access';
 
 @Component({
   selector: 'ui-textfield',
@@ -18,18 +19,18 @@ import { FormControlComponent } from '../form-control/form-control.component';
   templateUrl: './textfield.component.html',
 })
 export class TextFieldComponent extends FormControlComponent {
-  @Input() size = InputFieldSize.MEDIUM;
+  @Input() size: keyof typeof UiSize;
   @Input() type: InputFieldType;
   @Input() placeholder = '';
   @Input() styleVariant: keyof typeof InputFieldStyleVariant = 'NORMAL';
 
   get sizeClasses(): string {
     switch (this.size) {
-      case InputFieldSize.SMALL:
+      case 'SMALL':
         return 'p-1.5';
-      case InputFieldSize.MEDIUM:
+      case 'MEDIUM':
         return 'p-2.5';
-      case InputFieldSize.LARGE:
+      case 'LARGE':
         return 'p-3.5';
       default:
         return '';
