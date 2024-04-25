@@ -31,8 +31,10 @@ export class IconComponent {
   }
 
   get sizeClasses(): string {
-    const { SMALL, MEDIUM } = IconSize;
+    const { SMALL, MEDIUM, EXTRA_SMALL } = IconSize;
     switch (this.size) {
+      case EXTRA_SMALL:
+        return 'h-4 w-4';
       case SMALL:
         return 'h-6 w-6';
       case MEDIUM:

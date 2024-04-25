@@ -1,13 +1,16 @@
-<div class="flex space-x-4">
+<div class="flex space-x-4 h-full items-center">
   <ng-container *ngFor="let appMenu of navbarList; let idx = index">
     <quiz-navbar-item
+      class="h-full"
       *ngIf="appMenu.template"
       [uiMenu]="popover"
       (click)="openNavbarTemplate(appMenu, idx)"
       [title]="appMenu.title"
+      [svgIcon]="appMenu.svgIcon"
       [isActive]="idx === idxActiveNavBar"
     ></quiz-navbar-item>
     <quiz-navbar-item
+      class="h-full"
       *ngIf="appMenu.link"
       (click)="handleActiveNavbar(idx)"
       [routerLink]="[appMenu.link]"

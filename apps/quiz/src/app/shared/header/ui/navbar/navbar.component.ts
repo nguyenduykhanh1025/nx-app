@@ -36,14 +36,17 @@ export class NavbarComponent {
     {
       title: 'Trang chủ',
       link: '/home',
+      svgIcon: undefined,
     },
     {
       title: 'Thư viện của bạn',
       template: MyLibraryComponent,
+      svgIcon: 'down-o',
     },
     {
       title: 'Lời giải chuyên gia',
       link: '/create-set',
+      svgIcon: undefined,
     },
   ];
 

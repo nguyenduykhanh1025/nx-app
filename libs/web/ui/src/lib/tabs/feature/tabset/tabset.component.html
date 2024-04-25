@@ -1,0 +1,31 @@
+<ng-template>
+  <ng-content></ng-content>
+</ng-template>
+
+<div class="mb-4">
+  <ul
+    class="flex flex-wrap -mb-px text-sm font-medium text-center border-b-2 border-gray"
+  >
+    <li
+      class="me-2"
+      role="presentation"
+      *ngFor="let tab of tabs; let idx = index"
+      [ngClass]="[idx === idxActiveTab ? 'border-b-2 border-button-primary-active' : '']"
+    >
+      <ui-button
+        [type]="ButtonType.LINK"
+        (uiClick)="handleSelectedIndexChange(idx)"
+      >
+        {{ tab.title }}
+      </ui-button>
+    </li>
+  </ul>
+</div>
+
+<div id="default-tab-content">
+  <div *ngIf="tabs.length !== 0">
+    <ng-container
+      [ngTemplateOutlet]="tabs.get(idxActiveTab)!.contentTemplate"
+    ></ng-container>
+  </div>
+</div>

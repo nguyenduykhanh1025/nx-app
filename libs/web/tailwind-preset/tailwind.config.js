@@ -11,6 +11,7 @@ module.exports = {
         success: '#18AE79',
         error: '#D05700',
         picked: '#ffcd20',
+        gray: '#2a2b48',
         button: {
           primary: {
             active: '#4255ff',
