@@ -4,6 +4,7 @@ import { CardComponent, ImageComponent, TagComponent } from '@nx-app/web/libs';
 
 import { Lesson } from '../../../../data-access/models/lesson.model';
 import { UserLinkComponent } from '../user-link/user-link.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'quiz-lesson',
@@ -14,6 +15,7 @@ import { UserLinkComponent } from '../user-link/user-link.component';
     TagComponent,
     ImageComponent,
     UserLinkComponent,
+    RouterLink
   ],
   templateUrl: './lesson.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

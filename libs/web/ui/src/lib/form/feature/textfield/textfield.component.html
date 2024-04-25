@@ -1,14 +1,21 @@
 <div
-  class="focus-within:border-b-4 block w-full border-b-text-input-primary-active border-none rounded-xl"
+  class="focus-within:border-b-4 w-full border-b-text-input-primary-active border-none rounded-xl flex flex-row relative items-center"
   [formGroup]="$any(control.parent)"
 >
   <input
     [type]="type"
     id="first_name"
-    class="text-white text-base block w-full p-2.5 focus:ring-primary appearance-none outline-none bg-secondary border-b-white focus:border-b-picked"
-    [ngClass]="[sizeClasses,  variantClasses]"
+    class="text-white text-base block w-full p-2.5 focus:ring-primary appearance-none outline-none bg-secondary border-b-white focus:border-b-picked placeholder:left-2"
+    [ngClass]="[sizeClasses, variantClasses]"
     [placeholder]="placeholder"
     [formControlName]="controlName"
   />
+  <!-- TODO: it needs to style in another way -->
+  <div class="absolute right-4">
+    <ng-content select="[slot=after]"></ng-content>
+  </div>
 </div>
-<ui-validation-error [control]="control" [errorMessage]="errorMessage"></ui-validation-error>
+<ui-validation-error
+  [control]="control"
+  [errorMessage]="errorMessage"
+></ui-validation-error>

@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuItem } from '../../data-access/models';
 import { MenuAbstractComponent } from '../../utility';
 
 @Component({
@@ -11,6 +10,4 @@ import { MenuAbstractComponent } from '../../utility';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent extends MenuAbstractComponent {
-  // @ViewChild(TemplateRef, {static: true}) menuTemplate: TemplateRef<any>;
-  // @Output() override uiItemClick = new EventEmitter<MenuItem>();
 }

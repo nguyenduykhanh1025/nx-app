@@ -1,13 +1,11 @@
-<ui-card>
+<ui-card [routerLink]="['/fashion-flash-cards']">
   <div class="flex justify-between cursor-pointer">
     <div>
-      <b class="prose-lg block">{{lesson.title}}</b>
-      <ui-tag>{{lesson.amount_of_term}} thuật ngữ</ui-tag>
+      <b class="prose-lg block">{{ lesson.title }}</b>
+      <ui-tag>{{ lesson.amount_of_term }} thuật ngữ</ui-tag>
     </div>
     <div class="w-28">
-      <ui-image
-        [src]="lesson.image"
-      ></ui-image>
+      <ui-image [src]="lesson.image"></ui-image>
     </div>
   </div>
   <quiz-user-link></quiz-user-link>

@@ -51,7 +51,7 @@
           </svg>
         </button>
       </div>
-      <div class="flex flex-1 items-center h-full">
+      <div class="flex items-center h-full">
         <div class="flex flex-shrink-0 items-center">
           <img
             class="h-8 w-auto"
@@ -63,62 +63,39 @@
           <quiz-navbar class="h-full"></quiz-navbar>
         </div>
       </div>
-      <div class="flex flex-shrink-0 items-center">
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autocomplete="email"
-          required
-          class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-        />
+      <div class="flex flex-1 items-center mx-16">
+        <form [formGroup]="form" class="w-full">
+          <ui-textfield
+            [control]="form.controls.search"
+            placeholder="Tìm kiếm gì đó"
+          >
+            <ui-icon-button
+              svgIcon="search-o"
+              slot="after"
+              [shape]="IconButtonShape.SQUARE"
+              [type]="ButtonType.LINK"
+            ></ui-icon-button>
+          </ui-textfield>
+        </form>
       </div>
       <div
         class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
       >
-        <button
-          type="button"
-          class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-        >
-          <span class="absolute -inset-1.5"></span>
-          <span class="sr-only">View notifications</span>
-          <svg
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-            />
-          </svg>
-        </button>
-
+        <ui-icon-button
+          svgIcon="bell-o"
+          [type]="ButtonType.LINK"
+        ></ui-icon-button>
         <!-- Profile dropdown -->
-        <div class="relative ml-3">
-          <div>
-            <button
-              type="button"
-              class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-              id="user-menu-button"
-              aria-expanded="false"
-              aria-haspopup="true"
-            >
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">Open user menu</span>
-              <img
-                class="h-8 w-8 rounded-full"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-              />
-            </button>
-          </div>
-        </div>
+        <ui-avatar
+          class="ml-4 cursor-pointer"
+          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          [size]="AvatarSize.SMALL"
+          [uiMenu]="profileTmpl"
+        ></ui-avatar>
       </div>
     </div>
   </div>
 </nav>
+<quiz-menu #profileTmpl>
+  <quiz-profile></quiz-profile>
+</quiz-menu>
