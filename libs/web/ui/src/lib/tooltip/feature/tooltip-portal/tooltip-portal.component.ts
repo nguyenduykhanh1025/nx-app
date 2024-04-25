@@ -9,9 +9,9 @@ import {
   Input,
 } from '@angular/core';
 
-import { IconComponent } from '../../icon';
-import { TooltipIconDirection } from '../models/tooltip-icon-direction';
-import TooltipService from '../services/tooltip.service';
+import { IconComponent } from '../../../icon';
+import { TooltipIconDirection } from '../../data-access/models/tooltip-icon-direction';
+import TooltipService from '../../data-access/services/tooltip.service';
 
 @Component({
   selector: 'ui-tooltip-portal',

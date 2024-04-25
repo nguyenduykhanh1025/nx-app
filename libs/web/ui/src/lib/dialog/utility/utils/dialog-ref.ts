@@ -1,8 +1,8 @@
 import { OverlayRef } from '@angular/cdk/overlay';
 import { Observable, Subject, filter, map, race, switchMap, take } from 'rxjs';
 import { ESCAPE } from '@angular/cdk/keycodes';
-import { DialogConfig } from '../models/dialog.config';
-import { DialogPortalComponent } from '../dialog-portal/dialog-portal.component';
+import { DialogPortalComponent } from '../../feature/dialog-portal/dialog-portal.component';
+import { DialogConfig } from '../../data-access/models';
 
 export class DialogRef<TReturnType = any, TContentComponent = any> {
   componentInstance: DialogPortalComponent<TContentComponent> | undefined;

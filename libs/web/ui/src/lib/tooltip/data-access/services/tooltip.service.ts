@@ -1,6 +1,6 @@
 import { ConnectionPositionPair } from '@angular/cdk/overlay';
 import { TooltipIconDirection } from '../models/tooltip-icon-direction';
-import { CONNECTION_POSITION_PAIR } from '../../models';
+import { CONNECTION_POSITION_PAIR } from '../../../../data-access/constants';
 
 export default class TooltipService {
   static getTooltipIconDirection(

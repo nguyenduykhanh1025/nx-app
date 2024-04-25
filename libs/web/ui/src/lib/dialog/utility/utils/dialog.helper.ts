@@ -1,6 +1,6 @@
 import { Overlay, OverlayConfig } from "@angular/cdk/overlay";
+import { DialogConfig } from "../../data-access/models";
 
-import { DialogConfig } from "../models/dialog.config"
 
 export const getDialogConfigDefault = (overlay: Overlay): DialogConfig => {
   const dialogConfig = new DialogConfig();

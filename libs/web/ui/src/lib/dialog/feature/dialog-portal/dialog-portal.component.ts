@@ -12,11 +12,10 @@ import {
 import { CommonModule } from '@angular/common';
 import { ContentDialogDirective } from './dialog-content.directive';
 import { Observable, Subject, Subscription, filter, map, withLatestFrom } from 'rxjs';
-import { DialogRef } from '../utils/dialog-ref';
-import { DialogConfig } from '../models/dialog.config';
-import { AnimationState } from '../utils/constants';
-import { DialogType } from '../models/dialog-type';
-import { ButtonComponent, ButtonType, IconButtonComponent } from '../../buttons';
+import { ButtonComponent, IconButtonComponent } from '../../../buttons';
+import { DialogConfig, DialogType } from '../../data-access/models';
+import { DialogRef } from '../../utility/utils/dialog-ref';
+import { AnimationState } from '../../utility/utils/constants';
 
 @Component({
   selector: 'ui-dialog-container',

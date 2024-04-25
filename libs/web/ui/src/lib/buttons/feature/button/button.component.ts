@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { IconComponent, SvgIcon } from '../../../icon';
 import { SpinnerComponent } from '../../../spinner';
-import { ButtonType } from '../../models/button-type';
 import { UiSize } from 'libs/web/ui/src/data-access';
+import { ButtonType } from '../../data-access/models';
 
 @Component({
   selector: 'ui-button, [uiButton]',

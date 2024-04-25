@@ -16,8 +16,8 @@ import {
   OnInit,
 } from '@angular/core';
 
-import { TooltipConfig } from './models/tooltip.config';
-import { TooltipPortalComponent } from './tooltip-portal/tooltip-portal.component';
+import { TooltipConfig } from './data-access/models/tooltip.config';
+import { TooltipPortalComponent } from './feature/tooltip-portal/tooltip-portal.component';
 
 @Directive({
   selector: '[uiTooltip]',
