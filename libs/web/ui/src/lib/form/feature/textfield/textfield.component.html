@@ -2,10 +2,12 @@
   class="focus-within:border-b-4 w-full border-b-text-input-primary-active border-none rounded-xl flex flex-row relative items-center"
   [formGroup]="$any(control.parent)"
 >
+  <!-- FIXME: autocompleting is having a problem with style, there is a white color will be appear, try find a way in taiwind -->
   <input
-    [type]="type"
+    [attr.type]="type || 'text'"
     id="first_name"
-    class="text-white text-base block w-full p-2.5 focus:ring-primary appearance-none outline-none bg-secondary border-b-white focus:border-b-picked placeholder:left-2"
+    [id]="uniqueId"
+    class="text-white text-base block w-full p-2.5 focus:ring-primary appearance-none outline-non border-b-white focus:border-b-picked placeholder:left-2"
     [ngClass]="[sizeClasses, variantClasses]"
     [placeholder]="placeholder"
     [formControlName]="controlName"

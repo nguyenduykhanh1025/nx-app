@@ -26,6 +26,9 @@ export class IconComponent {
   @Input() dataRotate: boolean | undefined;
   @Input() size: keyof typeof UiSize | 'EXTRA_SMALL' = 'SMALL';
 
+  #iconRegistry = inject(MatIconRegistry);
+  #sanitizer = inject(DomSanitizer);
+
   get ariaHidden(): boolean {
     return !!this.ariaLabel;
   }
@@ -43,12 +46,9 @@ export class IconComponent {
     }
   }
 
-  private iconRegistry = inject(MatIconRegistry);
-  private sanitizer = inject(DomSanitizer);
-
   constructor() {
-    this.iconRegistry.addSvgIconSet(
-      this.sanitizer.bypassSecurityTrustResourceUrl(ICON_SPRITE_FILE_PATH)
+    this.#iconRegistry.addSvgIconSet(
+      this.#sanitizer.bypassSecurityTrustResourceUrl(ICON_SPRITE_FILE_PATH)
     );
   }
 }

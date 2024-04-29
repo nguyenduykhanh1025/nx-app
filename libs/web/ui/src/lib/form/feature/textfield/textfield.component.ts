@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {
-  InputFieldSize,
   InputFieldStyleVariant,
   InputFieldType,
 } from '../../data-access/models';
@@ -20,7 +19,7 @@ import { UiSize } from 'libs/web/ui/src/data-access';
 })
 export class TextFieldComponent extends FormControlComponent {
   @Input() size: keyof typeof UiSize;
-  @Input() type: InputFieldType;
+  @Input() type: keyof typeof InputFieldType;
   @Input() placeholder = '';
   @Input() styleVariant: keyof typeof InputFieldStyleVariant = 'NORMAL';
 
@@ -40,11 +39,11 @@ export class TextFieldComponent extends FormControlComponent {
   get variantClasses(): string {
     switch (this.styleVariant) {
       case 'CARD':
-        return 'rounded-none border-b-2 border-solid';
+        return 'rounded-none border-b-2 border-solid bg-secondary';
       case 'TRANSPARENT':
         return 'rounded-none border-b-2 border-solid bg-transparent ';
       default:
-        return 'rounded-xl border-none';
+        return 'rounded-xl border-none bg-secondary';
     }
   }
 }

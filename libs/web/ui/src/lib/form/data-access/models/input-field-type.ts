@@ -1,5 +1,5 @@
 export enum InputFieldType {
-  TEXT = 'text',
-  PASSWORD = 'password',
-  EMAIL = 'email'
+  text,
+  password,
+  email,
 }

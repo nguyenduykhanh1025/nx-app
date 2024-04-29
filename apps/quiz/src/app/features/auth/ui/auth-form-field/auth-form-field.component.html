@@ -1,0 +1,10 @@
+<div [formGroup]="$any(control.parent)" class="mt-4">
+  <label for="password" class="block mb-2 text-sm font-medium text-white">{{
+    label
+  }}</label>
+  <ui-textfield
+    [control]="control"
+    [placeholder]="placeholder"
+    [type]="inputType"
+  ></ui-textfield>
+</div>

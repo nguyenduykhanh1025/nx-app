@@ -1,29 +1,26 @@
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-} from '@angular/core';
+  ButtonComponent,
+  CheckboxComponent,
+  TextFieldComponent,
+} from '@nx-app/web/libs';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import {
-  ButtonComponent,
-  CheckboxComponent,
-  TextFieldComponent,
-} from '@nx-app/web/libs';
-import { Auth } from '@quiz-app/data-access/models';
-import { AuthActions } from '../../data-access/store/auth.actions';
-import { selectLoadingStatus } from '../../data-access/store/auth.selectors';
-import { map } from 'rxjs';
 import { PushPipe } from '@ngrx/component';
+import { Store } from '@ngrx/store';
+import { map } from 'rxjs';
+import { AuthActions, selectLoadingStatus } from '../../data-access/store';
+import { Auth } from '@quiz-app/data-access/models';
+import { RouterLink } from '@angular/router';
+import { AuthFormFieldComponent } from '../../ui/auth-form-field/auth-form-field.component';
 
 @Component({
-  selector: 'quiz-auth',
+  selector: 'quiz-login',
   standalone: true,
   imports: [
     CommonModule,
@@ -32,16 +29,18 @@ import { PushPipe } from '@ngrx/component';
     CheckboxComponent,
     ButtonComponent,
     PushPipe,
+    RouterLink,
+    AuthFormFieldComponent,
   ],
-  templateUrl: './auth.component.html',
+  templateUrl: './login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthComponent {
+export class LoginComponent {
   readonly #store = inject(Store);
+
   readonly isLoadingSignInButton$ = this.#store
     .select(selectLoadingStatus)
     .pipe(map((loadingStatus) => loadingStatus === 'RUNNING'));
-
   readonly loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),

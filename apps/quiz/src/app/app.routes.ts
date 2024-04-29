@@ -37,14 +37,15 @@ export const appRoutes: Routes = [
     path: 'auth',
     component: BlankLayoutComponent,
     canActivate: [unAuthGuard],
-    children: [
-      {
-        path: '',
-        loadComponent: () =>
-          import(
-            './features/auth/feature/auth/auth.component'
-          ).then((c) => c.AuthComponent),
-      }
-    ]
+    loadChildren: () => import('./features/auth/auth.routes').then(c => c.authRoutes)
+    // children: [
+    //   {
+    //     path: '',
+    //     loadComponent: () =>
+    //       import(
+    //         './features/auth/feature/auth/auth.component'
+    //       ).then((c) => c.AuthComponent),
+    //   }
+    // ]
   }
 ];

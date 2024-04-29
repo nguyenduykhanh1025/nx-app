@@ -1,5 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { LazyGetter } from 'lazy-get-decorator';
 
@@ -30,5 +29,10 @@ export class FormControlComponent {
         return this.control === parent.get(keyFromGroup);
       }) || null
     );
+  }
+
+  @LazyGetter()
+  get uniqueId(): string {
+    return `${this.controlName}-uniqueId`
   }
 }
